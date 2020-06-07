@@ -10,10 +10,7 @@ public class Municipio implements Serializable {
     private int foto;
     private int imagenDetalle;
     private String descripcion;
-   /* private String historia;
-    private int imagenHistoria;
-    private String leyendas;
-    private int imagenLeyendas;*/
+
 
     public Municipio(){}
 
