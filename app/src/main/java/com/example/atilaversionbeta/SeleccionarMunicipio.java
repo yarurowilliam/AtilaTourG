@@ -26,11 +26,11 @@ public class SeleccionarMunicipio extends AppCompatActivity {
             }
         });
 
-        botonBosconia = (Button) findViewById(R.id.buttonBosconia);
+        botonBosconia = (Button) findViewById(R.id.buttonManaure);
         botonBosconia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.municipioBuscado = "Bosconia";
+                MainActivity.municipioBuscado = "Manaure";
                 Intent intent = new Intent(SeleccionarMunicipio.this, MainActivity.class); //ELEGIMOS LA ACTIVITY QUE QUEREMOS EJECUTAR
                 startActivity(intent);
                 finish();

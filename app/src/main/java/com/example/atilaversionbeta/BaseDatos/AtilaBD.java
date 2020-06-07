@@ -1,7 +1,7 @@
 package com.example.atilaversionbeta.BaseDatos;
 
 public class AtilaBD {
-    //ACTIVIDADES
+    //CONTRACT ACTIVIDADES
     public static String TABLA_ACTIVIDAD = "actividades";
     public static String CODIGO_ACTIVIDAD = "codigo";
     public static String MUNICIPIO_ACTIVIDAD = "municipio";
@@ -11,8 +11,10 @@ public class AtilaBD {
     public static String IMG_DETALLE_ACTIVIDAD = "imageDetalle";
     public static String DESCRIPCION_ACTIVIDAD = "descripcion";
 
+
+    //CREAR TABLA
     public static final  String CREAR_TABLA_ACTIVIDAD="CREATE TABLE" +
             " " + TABLA_ACTIVIDAD + " (" +CODIGO_ACTIVIDAD+" "+
-            "INTEGER, "+ MUNICIPIO_ACTIVIDAD+" " +" TEXT," +  NOMBRE_ACTIVIDAD+" " +" TEXT,"+ INFO_ACTIVIDAD+" " +" TEXT,"
+            "INTEGER,"+ MUNICIPIO_ACTIVIDAD+" " +" TEXT," +  NOMBRE_ACTIVIDAD+" " +" TEXT,"+ INFO_ACTIVIDAD+" " +" TEXT,"
             + FOTO_ACTIVIDAD+" " +" INTEGER,"+IMG_DETALLE_ACTIVIDAD+" "+ "INTEGER,"+DESCRIPCION_ACTIVIDAD+" "+ "TEXT)";
 }

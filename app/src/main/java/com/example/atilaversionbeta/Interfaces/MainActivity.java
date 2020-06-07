@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //variable del fragment detalle
     DetalleMunicipioFragment detalleMunicipioFragment;
     DetalleActividadFragment detalleActividadFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container_fragment,new MainFragment());
         fragmentTransaction.commit();
+
+
 
     }
 
