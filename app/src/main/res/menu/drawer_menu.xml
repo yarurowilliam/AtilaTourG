@@ -22,6 +22,11 @@
                 android:id="@+id/eventos"
                 android:icon="@drawable/eventos"
                 android:title="Eventos"/>
+
+            <item
+                android:id="@+id/sitios"
+                android:icon="@drawable/puntosinteres"
+                android:title="Sitios de interes"/>
         </menu>
     </item>
 </menu>

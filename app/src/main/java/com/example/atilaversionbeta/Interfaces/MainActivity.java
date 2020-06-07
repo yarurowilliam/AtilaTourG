@@ -17,8 +17,10 @@ import com.example.atilaversionbeta.Entidades.Municipio;
 import com.example.atilaversionbeta.Fragments.Actividades.ActividadesFragment;
 import com.example.atilaversionbeta.Fragments.Actividades.DetalleActividadFragment;
 import com.example.atilaversionbeta.Fragments.DetalleMunicipioFragment;
+import com.example.atilaversionbeta.Fragments.Eventos.EventosFragment;
 import com.example.atilaversionbeta.Fragments.MainFragment;
 import com.example.atilaversionbeta.Fragments.MunicipiosFragment;
+import com.example.atilaversionbeta.Fragments.Sitios.SitiosFragment;
 import com.example.atilaversionbeta.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -82,6 +84,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_fragment,new ActividadesFragment());
+            fragmentTransaction.commit();
+        }
+        if(menuItem.getItemId() == R.id.eventos){
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_fragment,new EventosFragment());
+            fragmentTransaction.commit();
+        }
+        if(menuItem.getItemId() == R.id.sitios){
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_fragment,new SitiosFragment());
             fragmentTransaction.commit();
         }
         return false;
