@@ -17,6 +17,11 @@
                 android:id="@+id/actividades"
                 android:icon="@drawable/puntosinteres"
                 android:title="Actividades turisticas"/>
+
+            <item
+                android:id="@+id/eventos"
+                android:icon="@drawable/eventos"
+                android:title="Eventos"/>
         </menu>
     </item>
 </menu>
