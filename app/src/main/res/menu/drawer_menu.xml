@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="ATG BETA VERSION">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:icon="@drawable/buildings"
+                android:title="Home"/>
+
+            <item
+                android:id="@+id/municipios"
+                android:icon="@drawable/historia"
+                android:title="Informacion Municipios"/>
+
+            <item
+                android:id="@+id/actividades"
+                android:icon="@drawable/puntosinteres"
+                android:title="Actividades turisticas"/>
+        </menu>
+    </item>
+</menu>

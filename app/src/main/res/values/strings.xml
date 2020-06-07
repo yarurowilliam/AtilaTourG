@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ATG Beta Version</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <string name="valle_nombre">Valledupar</string>
+    <string name="valle_descripcionCorta">Valledupar, también llamada Ciudad de los Santos Reyes del Valle de Upar, es un municipio colombiano, capital del departamento del Cesar.</string>
+    <string name="valle_descripcionLarga">Valledupar, también llamada Ciudad de los Santos Reyes del Valle de Upar, es un municipio colombiano, capital del departamento del Cesar. Es la cabecera del municipio homónimo, el cual tiene una extensión de 4493 km², 493 342 habitantes y junto a su área metropolitana reúne 677 9411​ habitantes; está conformado por 25 corregimientos y 102 veredas.Está ubicada al nororiente de la Costa Atlántica colombiana, a orillas del río Guatapurí, en el valle del río Cesar formado por la Sierra Nevada de Santa Marta al occidente y la serranía del Perijá al oriente.
+        La ciudad es un importante centro para la producción agrícola, agroindustrial y ganadera en la región comprendida entre el norte del departamento del Cesar y el sur del departamento de La Guajira, en el punto intermedio de las dos cuencas de explotación carbonífera más grandes del país: Cerrejón al norte y el complejo minero operado por Glencor La Loma-La Jagua al sur. También es uno de los principales epicentros musicales, culturales y folclóricos de Colombia por ser la cuna del vallenato, género musical de mayor popularidad en el país y actualmente símbolo de la música colombiana. Anualmente atrae a miles de visitantes de Colombia y del exterior durante el Festival de la Leyenda Vallenata, máximo evento del vallenato.</string>
+
+    <string name="mana_nombre">Manaure</string>
+    <string name="mana_descripcionCorta">Manaure Balcón del Cesar es uno de los 25 municipios que conforman el departamento del Cesar en la región Andina , Colombia.</string>
+    <string name="mana_descripcionLarga">Manaure</string>
+
+    <string name="pueblo_nombre">Pueblo Bello</string>
+    <string name="pueblo_descripcionCorta">Pueblo Bello es uno de los 25 municipios colombianos que integran el Departamento del Cesar. </string>
+    <string name="pueblo_descripcionLarga">Pueblo bello</string>
+
+
+    <string name="ciclomontanismo">Ciclomontañismo</string>
+    <string name="cilom_descripcion">El ciclomontañismo es uno de los deportes mas practicados en el departamento del Cesar, por tener varios lugares para su practica. </string>
+    <string name="cilom_descripcionLarga">Los lugares donde se puede practicar este deporte son: \n El Jabo, Guacoche, Los Corazones
+        , Patillal, San José de Oriente en La Paz, Manaure Balcón del Cesar, San Juan del Cesar, entre otros,
+        son los corregimientos que visitan los deportistas aficionados de Valledupar</string>
+
+
+    <string name="senderismo">Este plan es perfecto para todo aquel que disfrute ejercitar su cuerpo, disfrutando de la naturaleza y el clima fresco de la mañana.
+        Mirador del Santo Ecce Homo. Si visitas Valledupar puedes realizar caminatas por el parque lineal del rio Guatapurí y conectar con los senderos del cerro del mirador del Santo Ecce Homo.
+        Manaure: En este municipio encontraras el Cerro de la Cruz y los caminos hasta Sabana Rubia.
+        Recomedaciones: Ropa y calzado adecuados. Si realizas estas actividades en Valledupar ten en cuenta que el clima es cálido y seco, la hidratación es fundamental. En Manaure ten en cuenta
+        que la mayoría de los senderos son en altura; en el caso de Sabana Rubia llegarás hasta los 3.000 m.s.n.m por lo que debes llevar ropa para clima frio. </string>
+
+
+</resources>

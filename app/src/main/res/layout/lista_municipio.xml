@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#C8FDCA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+    <ImageView
+        android:id="@+id/imagen_municipio"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/gohan_cara1">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/nombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del municipio"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/imagen_municipio"
+        android:layout_toEndOf="@id/imagen_municipio"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020-01-20"
+        android:layout_toRightOf="@id/imagen_municipio"
+        android:layout_toEndOf="@id/imagen_municipio"
+        android:layout_below="@+id/nombres"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp">
+    </TextView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
