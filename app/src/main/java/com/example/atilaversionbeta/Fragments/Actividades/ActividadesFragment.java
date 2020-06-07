@@ -19,12 +19,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.atilaversionbeta.Adaptadores.AdapterActividad;
-import com.example.atilaversionbeta.Adaptadores.AdapterMunicipio;
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
-import com.example.atilaversionbeta.Datos.CargarActividades;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Entidades.Actividad;
-import com.example.atilaversionbeta.Entidades.Municipio;
 import com.example.atilaversionbeta.Interfaces.MainActivity;
 import com.example.atilaversionbeta.Interfaces.iComunicaFragments;
 import com.example.atilaversionbeta.R;

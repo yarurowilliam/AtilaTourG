@@ -1,5 +1,6 @@
 package com.example.atilaversionbeta.Adaptadores;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,11 @@ public class AdapterEvento  extends RecyclerView.Adapter<AdapterEvento.ViewHolde
     ArrayList<Evento> model;
     private View.OnClickListener listener;
 
-    public AdapterEvento(LayoutInflater inflater, ArrayList<Evento> model) {
-        this.inflater = inflater;
+    public AdapterEvento(Context context, ArrayList<Evento> model){
+        this.inflater = LayoutInflater.from(context);
         this.model = model;
     }
+
 
     @NonNull
     @Override
