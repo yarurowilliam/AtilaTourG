@@ -3,7 +3,7 @@ package com.example.atilaversionbeta.Entidades;
 import java.io.Serializable;
 
 public class Actividad implements Serializable {
-    private String codigo;
+    private int codigo;
     private String municipio;
     private String nombre;
     private String info;
@@ -16,7 +16,7 @@ public class Actividad implements Serializable {
 
     }
 
-    public Actividad(String codigo,String municipio,String nombre, String info, int foto, int imagenDetalle, String descripcion) {
+    public Actividad(int codigo,String municipio,String nombre, String info, int foto, int imagenDetalle, String descripcion) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.nombre = nombre;
@@ -27,11 +27,11 @@ public class Actividad implements Serializable {
     }
 
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
