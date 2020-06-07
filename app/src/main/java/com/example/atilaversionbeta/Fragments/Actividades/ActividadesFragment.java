@@ -51,7 +51,6 @@ public class ActividadesFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.actividades_fragment,container,false);
-        //txtnombre = view.findViewById(R.id.txtnombre);
         try{
             admin = new ConexionSQLiteHelperActividad(getContext(),"actividades",null,1);
             updateBD();
@@ -61,7 +60,6 @@ public class ActividadesFragment extends Fragment{
                 actividadesManaure();
             }
             recyclerActividad = view.findViewById(R.id.recyclerActivida);
-            //listaActividades = new ArrayList<>();
             consultarListaActividades();
         }catch (Exception e){
 
@@ -95,14 +93,8 @@ public class ActividadesFragment extends Fragment{
         adapterActividad.setOnclickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String nombre = listaActividades.get(recyclerActividad.getChildAdapterPosition(view)).getNombre();
-                //txtnombre.setText(nombre);
                 Toast.makeText(getContext(), "Seleccionó: "+ listaActividades.get(recyclerActividad.getChildAdapterPosition(view)).getNombre(), Toast.LENGTH_SHORT).show();
-                //enviar mediante la interface el objeto seleccionado al detalle
-                //se envia el objeto completo
-                //se utiliza la interface como puente para enviar el objeto seleccionado
                 interfaceComunicaFragments.enviarActividad(listaActividades.get(recyclerActividad.getChildAdapterPosition(view)));
-                //luego en el mainactivity se hace la implementacion de la interface para implementar el metodo enviarpersona
             }
         });
     }
@@ -113,59 +105,21 @@ public class ActividadesFragment extends Fragment{
         updateBD();
     }
 
-    private void mostrarData(){
-        recyclerActividad.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapterActividad = new AdapterActividad(getContext(), listaActividades);
-        recyclerActividad.setAdapter(adapterActividad);
-
-        adapterActividad.setOnclickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //String nombre = listaActividades.get(recyclerActividad.getChildAdapterPosition(view)).getNombre();
-                //txtnombre.setText(nombre);
-                Toast.makeText(getContext(), "Seleccionó: "+ listaActividades.get(recyclerActividad.getChildAdapterPosition(view)).getNombre(), Toast.LENGTH_SHORT).show();
-                //enviar mediante la interface el objeto seleccionado al detalle
-                //se envia el objeto completo
-                //se utiliza la interface como puente para enviar el objeto seleccionado
-                interfaceComunicaFragments.enviarActividad(listaActividades.get(recyclerActividad.getChildAdapterPosition(view)));
-                //luego en el mainactivity se hace la implementacion de la interface para implementar el metodo enviarpersona
-            }
-        });
-    }
-
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        //esto es necesario para establecer la comunicacion entre la lista y el detalle
-        //si el contexto que le esta llegando es una instancia de un activity:
         if(context instanceof Activity){
-            //voy a decirle a mi actividad que sea igual a dicho contesto. castin correspondiente:
             this.actividad= (Activity) context;
-            ////que la interface icomunicafragments sea igual ese contexto de la actividad:
             interfaceComunicaFragments= (iComunicaFragments) this.actividad;
-            //esto es necesario para establecer la comunicacion entre la lista y el detalle
         }
-
-       /* if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }*/
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        // mListener = null;
     }
 
-    /*
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }*/
 
     private void updateBD(){
         SQLiteDatabase db = admin.getWritableDatabase();
@@ -177,10 +131,6 @@ public class ActividadesFragment extends Fragment{
     //VALLEDUPAR
     public void actividadesValledupar(){
         guardarCiclomonta();
-    }
-
-    public void actividadesManaure(){
-        guardarParapente();
     }
 
     public void guardarCiclomonta(){
@@ -198,7 +148,13 @@ public class ActividadesFragment extends Fragment{
         Toast.makeText(getContext(),"AA:"+ID,Toast.LENGTH_LONG);
     }
 
-   public void guardarParapente(){
+    //MANAURE
+    public void actividadesManaure(){
+        guardarParapente();
+    }
+
+
+    public void guardarParapente(){
         SQLiteDatabase db = admin.getWritableDatabase();
         ContentValues values =  new ContentValues();
         values.put(AtilaBD.CODIGO_ACTIVIDAD,1);
