@@ -22,7 +22,7 @@ public class AtilaBD {
     public static String DESCRIPCION_EVENTO = "descripcion";
 
     //CONTRACT SITIOS
-    public static String TABLA_SITIO = "sitio";
+    public static String TABLA_SITIO = "sitios";
     public static String CODIGO_SITIO = "codigo";
     public static String TIPO_SITIO = "tipo";
     public static String MUNICIPIO_SITIO = "municipio";

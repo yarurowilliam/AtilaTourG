@@ -30,8 +30,6 @@ import java.util.ArrayList;
 
 public class ActividadesFragment extends Fragment{
 
-
-    //private OnFragmentInteractionListener mListener;
     String municipioBuscado = MainActivity.municipioBuscado;
     ConexionSQLiteHelperActividad admin;
     AdapterActividad adapterActividad;
@@ -40,7 +38,6 @@ public class ActividadesFragment extends Fragment{
 
     EditText txtnombre;
 
-    //Crear referencias para poder realizar la comunicacion entre el fragment detalle
     Activity actividad;
     iComunicaFragments interfaceComunicaFragments;
 

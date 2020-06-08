@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.atilaversionbeta.Entidades.Actividad;
 import com.example.atilaversionbeta.Entidades.Sitio;
 import com.example.atilaversionbeta.R;
 

@@ -12,6 +12,9 @@ public class Sitio implements Serializable {
     private int imagenDetalle;
     private String descripcion;
 
+    public Sitio(){}
+
+
     public Sitio(int codigo, String municipio, String tipo, String nombre, String info, int foto, int imagenDetalle, String descripcion) {
         this.codigo = codigo;
         this.municipio = municipio;

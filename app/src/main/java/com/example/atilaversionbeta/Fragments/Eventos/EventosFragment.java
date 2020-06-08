@@ -17,12 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.atilaversionbeta.Adaptadores.AdapterActividad;
 import com.example.atilaversionbeta.Adaptadores.AdapterEvento;
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
-import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
-import com.example.atilaversionbeta.Entidades.Actividad;
 import com.example.atilaversionbeta.Entidades.Evento;
 import com.example.atilaversionbeta.Interfaces.MainActivity;
 import com.example.atilaversionbeta.Interfaces.iComunicaFragments;

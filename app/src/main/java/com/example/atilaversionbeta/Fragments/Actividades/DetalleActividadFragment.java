@@ -22,9 +22,8 @@ public class DetalleActividadFragment extends Fragment {
         nombre = view.findViewById(R.id.nombreActividad);
         imagen = view.findViewById(R.id.imagen_detalleidA);
         descripcion = view.findViewById(R.id.descripcion_detalleA);
-        //Crear bundle para recibir el objeto enviado por parametro.
         Bundle objetoActividad = getArguments();
-        Actividad actividad = null;;        //validacion para verificar si existen argumentos para mostrar
+        Actividad actividad = null;
 
         if(objetoActividad !=null){
             actividad = (Actividad) objetoActividad.getSerializable("objeto");
