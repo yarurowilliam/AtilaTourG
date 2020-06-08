@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DetalleMunicipioFragment detalleMunicipioFragment;
     DetalleActividadFragment detalleActividadFragment;
     DetalleEventoFragment detalleEventoFragment;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
