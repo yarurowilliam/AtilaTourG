@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.example.atilaversionbeta.Entidades.Actividad;
 import com.example.atilaversionbeta.Entidades.Evento;
 import com.example.atilaversionbeta.Entidades.Municipio;
+import com.example.atilaversionbeta.Entidades.Sitio;
 import com.example.atilaversionbeta.Fragments.Actividades.ActividadesFragment;
 import com.example.atilaversionbeta.Fragments.Actividades.DetalleActividadFragment;
 import com.example.atilaversionbeta.Fragments.DetalleMunicipioFragment;
@@ -22,6 +23,7 @@ import com.example.atilaversionbeta.Fragments.Eventos.DetalleEventoFragment;
 import com.example.atilaversionbeta.Fragments.Eventos.EventosFragment;
 import com.example.atilaversionbeta.Fragments.MainFragment;
 import com.example.atilaversionbeta.Fragments.MunicipiosFragment;
+import com.example.atilaversionbeta.Fragments.Sitios.DetalleSitioFragment;
 import com.example.atilaversionbeta.Fragments.Sitios.SitiosFragment;
 import com.example.atilaversionbeta.R;
 import com.google.android.material.navigation.NavigationView;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DetalleMunicipioFragment detalleMunicipioFragment;
     DetalleActividadFragment detalleActividadFragment;
     DetalleEventoFragment detalleEventoFragment;
+    DetalleSitioFragment detalleSitioFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +150,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container_fragment, detalleEventoFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+    @Override
+    public void enviarSitio(Sitio sitio) {
+
+        detalleSitioFragment = new DetalleSitioFragment();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto", sitio);
+        detalleSitioFragment.setArguments(bundleEnvio);
+
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container_fragment, detalleSitioFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
