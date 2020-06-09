@@ -90,7 +90,7 @@ public class EventosFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        updateBD();
+        //updateBD();
     }
 
     @Override
@@ -108,8 +108,12 @@ public class EventosFragment extends Fragment {
     }
 
     private void updateBD(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        db.delete(AtilaBD.TABLA_EVENTO,"",null);
+        try{
+            SQLiteDatabase db = admin.getWritableDatabase();
+            db.delete(AtilaBD.TABLA_EVENTO,"",null);
+        }catch (Exception e){
+
+        }
     }
 
     //VALLEDUPAR

@@ -24,6 +24,8 @@ public class ConexionSQLiteHelperSitio extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.setVersion(newVersion);
+        db.execSQL("DROP TABLE IF EXISTS sitios");
+        onCreate(db);
+        //db.setVersion(newVersion);
     }
 }

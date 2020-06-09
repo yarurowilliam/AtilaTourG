@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.atilaversionbeta.Adaptadores.AdapterSitio;
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
-import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperSitio;
 import com.example.atilaversionbeta.Entidades.Sitio;
 import com.example.atilaversionbeta.Interfaces.MainActivity;
@@ -30,7 +31,9 @@ import java.util.ArrayList;
 
 public class SitiosFragment extends Fragment {
 
+    ImageButton btnRestaurante,btnHotel;
     String municipioBuscado = MainActivity.municipioBuscado;
+    String tipoBusqueda;
     ConexionSQLiteHelperSitio admin;
     AdapterSitio adapterSitio;
     RecyclerView recyclerSitio;
@@ -38,21 +41,42 @@ public class SitiosFragment extends Fragment {
 
     Activity actividad;
     iComunicaFragments interfaceComunicaFragments;
+    private Object ImageButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sitios_fragment,container,false);
+        btnRestaurante = (ImageButton) view.findViewById(R.id.botonRestaurante);
+        btnHotel = (ImageButton) view.findViewById(R.id.botonHotel);
         try{
-            admin = new ConexionSQLiteHelperSitio(getContext(),"eventos",null,1);
-            updateBD();
+            admin = new ConexionSQLiteHelperSitio(getContext(),"sitios",null,1);
+           /* updateBD();
             if(municipioBuscado.equals("Valledupar")){
-                sitiosValledupar();
+                hotelesValledupar();
+                restaurantesValledupar();
             }else if(municipioBuscado.equals("Manaure")){
 
-            }
+            }*/
             recyclerSitio = view.findViewById(R.id.recyclerSitios);
-            consultarListaSitio();
+            btnRestaurante.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Restaurante";
+                    Toast.makeText(getContext(), "RESTAURANTES EN VALLEDUPAR HPTA", Toast.LENGTH_SHORT).show();
+                    consultarLista();
+                }
+            });
+            btnHotel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Hotel";
+                    Toast.makeText(getContext(), "HOTELES EN VALLEDUPAR HPTA", Toast.LENGTH_SHORT).show();
+                    consultarLista();
+                }
+            });
+
+
         }catch (Exception e){
 
         }
@@ -75,18 +99,22 @@ public class SitiosFragment extends Fragment {
     }
 
     private void updateBD(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        db.delete(AtilaBD.TABLA_SITIO,"",null);
+        try{
+            SQLiteDatabase db = admin.getWritableDatabase();
+            db.delete(AtilaBD.TABLA_SITIO,"",null);
+        }catch (Exception e){
+
+        }
     }
 
 
-    ///CONSULTANDO POR SITIO
-    private void consultarListaSitio(){
+    ///CONSULTANDO POR SITIO RESTAURANTE
+    private void consultarLista(){
         SQLiteDatabase db = admin.getReadableDatabase();
         listaSitios = new ArrayList<>();
         Sitio sitio= null;
-        String[] args = new String[] {municipioBuscado};
-        Cursor cursor = db.rawQuery(" SELECT * FROM sitios WHERE municipio=? ", args);
+        String[] args = new String[] {municipioBuscado,tipoBusqueda};
+        Cursor cursor = db.rawQuery(" SELECT * FROM sitios WHERE municipio=? AND tipo=? ", args);
         while(cursor.moveToNext()){
             sitio = new Sitio();
             sitio.setCodigo(cursor.getInt(0));
@@ -111,31 +139,4 @@ public class SitiosFragment extends Fragment {
             }
         });
     }
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    //GUARDANDO LOS SITIOS POR MUNICIPIO Y TIPO
-
-    //VALLEDUPAR
-    public void sitiosValledupar(){
-        guardarRestauranteMontaCarga();
-    }
-
-    public void guardarRestauranteMontaCarga(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
-        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
-        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
-        values.put(AtilaBD.NOMBRE_SITIO,"Montacarga del sur");
-        values.put(AtilaBD.INFO_SITIO,"Este espacio es reservado para la informacion del restaurante");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
-        values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");
-
-        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
-        Toast.makeText(getContext(),"AA:"+ID,Toast.LENGTH_LONG);
-    }
-
-
 }

@@ -116,8 +116,12 @@ public class ActividadesFragment extends Fragment{
 
 
     private void updateBD(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        db.delete(AtilaBD.TABLA_ACTIVIDAD,"",null);
+        try{
+            SQLiteDatabase db = admin.getWritableDatabase();
+            db.delete(AtilaBD.TABLA_ACTIVIDAD,"",null);
+        }catch (Exception e){
+
+        }
     }
 
     //GUARDANDO LAS ACTIVIDADES POR MUNICIPIO

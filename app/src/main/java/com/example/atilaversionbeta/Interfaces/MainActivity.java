@@ -9,9 +9,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.example.atilaversionbeta.BaseDatos.AtilaBD;
+import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
+import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperSitio;
 import com.example.atilaversionbeta.Entidades.Actividad;
 import com.example.atilaversionbeta.Entidades.Evento;
 import com.example.atilaversionbeta.Entidades.Municipio;
@@ -45,6 +51,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DetalleEventoFragment detalleEventoFragment;
     DetalleSitioFragment detalleSitioFragment;
 
+    ConexionSQLiteHelperEvento eventoSave;
+    ConexionSQLiteHelperSitio sitioSave;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        updateBD();
+    }
+
+    private void updateBD(){
+        try{
+            SQLiteDatabase db = sitioSave.getWritableDatabase();
+            db.delete(AtilaBD.TABLA_SITIO,"",null);
+        }catch (Exception e){
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navigationView);
+
+        sitioSave = new ConexionSQLiteHelperSitio(this,"sitios",null,1);
+        guardarSitios();
+
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
@@ -170,6 +197,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
 
     }
+
+    //SITIOS............................................................
+    public void guardarSitios(){
+        restaurantesSitios();
+        hotelesSitios();
+    }
+
+    public void restaurantesSitios(){
+        guardarRestauranteMontaCarga();
+    }
+
+    public void guardarRestauranteMontaCarga(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Montacarga del sur");
+        values.put(AtilaBD.INFO_SITIO,"Este espacio es reservado para la informacion del restaurante");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void hotelesSitios(){guardarHotelHilton();}
+
+    public void guardarHotelHilton(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Hotel");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Hilton");
+        values.put(AtilaBD.INFO_SITIO,"Este espacio es reservado para la informacion del hotel");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    //.....................................................................
+
 
 
 }
