@@ -32,6 +32,17 @@ public class AtilaBD {
     public static String IMG_DETALLE_SITIO = "imageDetalle";
     public static String DESCRIPCION_SITIO = "descripcion";
 
+    //CONTRACT INFORMACION
+    public static String TABLA_INFORMACION = "informacion";
+    public static String CODIGO_INFORMACION = "codigo";
+    public static String TIPO_INFORMACION = "tipo";
+    public static String MUNICIPIO_INFORMACION = "municipio";
+    public static String NOMBRE_INFORMACION = "nombre";
+    public static String INFO_INFORMACION = "info";
+    public static String FOTO_INFORMACION= "foto";
+    public static String IMG_DETALLE_INFORMACION = "imageDetalle";
+    public static String DESCRIPCION_INFORMACION = "descripcion";
+
 
     //CREAR TABLA ACTIVIDAD
     public static final  String CREAR_TABLA_ACTIVIDAD="CREATE TABLE" +
@@ -50,4 +61,10 @@ public class AtilaBD {
             " " + TABLA_SITIO + " (" +CODIGO_SITIO+" "+
             "INTEGER,"+ TIPO_SITIO + " "+" TEXT,"+ MUNICIPIO_SITIO+" " +" TEXT," +  NOMBRE_SITIO+" " +" TEXT,"+ INFO_SITIO+" " +" TEXT,"
             + FOTO_SITIO+" " +" INTEGER,"+IMG_DETALLE_SITIO+" "+ "INTEGER,"+DESCRIPCION_SITIO+" "+ "TEXT)";
+
+    //CREAR TABLA INFORMACION
+    public static final  String CREAR_TABLA_INFORMACION="CREATE TABLE" +
+            " " + TABLA_INFORMACION + " (" +CODIGO_INFORMACION+" "+
+            "INTEGER,"+ TIPO_INFORMACION + " "+" TEXT,"+ MUNICIPIO_INFORMACION+" " +" TEXT," +  NOMBRE_INFORMACION+" " +" TEXT,"+ INFO_INFORMACION+" " +" TEXT,"
+            + FOTO_INFORMACION+" " +" INTEGER,"+IMG_DETALLE_INFORMACION+" "+ "INTEGER,"+DESCRIPCION_INFORMACION+" "+ "TEXT)";
 }

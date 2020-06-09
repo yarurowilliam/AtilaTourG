@@ -1,4 +1,4 @@
-package com.example.atilaversionbeta.Fragments.Informacion;
+package com.example.atilaversionbeta.Fragments.Municipio;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

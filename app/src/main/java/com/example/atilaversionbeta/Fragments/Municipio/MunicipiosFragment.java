@@ -1,4 +1,4 @@
-package com.example.atilaversionbeta.Fragments.Informacion;
+package com.example.atilaversionbeta.Fragments.Municipio;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,10 +37,10 @@ public class MunicipiosFragment extends Fragment {
     Activity actividad;
     iComunicaFragments interfaceComunicaFragments;
 
-    @Nullable
+  /*  @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.municipios_fragment,container,false);
+        View view = inflater.inflate(R.layout.ñ,container,false);
         //txtnombre = view.findViewById(R.id.txtnombre);
 
         recyclerMunicipio = view.findViewById(R.id.recyclerView);
@@ -48,7 +48,7 @@ public class MunicipiosFragment extends Fragment {
         cargarLista();
         mostrarData();
         return view;
-    }
+    }*/
     public void cargarLista(){
         listaMunicipios.add(new Municipio(1003,getString(R.string.valle_nombre),getString(R.string.valle_descripcionCorta),"EFFE",R.drawable.vallecityicon,R.drawable.valleduparinfo,getString(R.string.valle_descripcionLarga)));
         listaMunicipios.add(new Municipio(1004,getString(R.string.mana_nombre),getString(R.string.mana_descripcionCorta),"EFFE",R.drawable.manaureicon,R.drawable.manaureinfo,getString(R.string.mana_descripcionLarga)));
@@ -63,14 +63,8 @@ public class MunicipiosFragment extends Fragment {
         adapterMunicipio.setOnclickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               //String nombre = listaMunicipios.get(recyclerMunicipio.getChildAdapterPosition(view)).getNombre();
-                //txtnombre.setText(nombre);
                Toast.makeText(getContext(), "Seleccionó: "+ listaMunicipios.get(recyclerMunicipio.getChildAdapterPosition(view)).getNombre(), Toast.LENGTH_SHORT).show();
-                //enviar mediante la interface el objeto seleccionado al detalle
-                //se envia el objeto completo
-                //se utiliza la interface como puente para enviar el objeto seleccionado
-                interfaceComunicaFragments.enviarMunicipio(listaMunicipios.get(recyclerMunicipio.getChildAdapterPosition(view)));
-                //luego en el mainactivity se hace la implementacion de la interface para implementar el metodo enviarpersona
+               interfaceComunicaFragments.enviarMunicipio(listaMunicipios.get(recyclerMunicipio.getChildAdapterPosition(view)));
             }
         });
     }
@@ -78,33 +72,16 @@ public class MunicipiosFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        //esto es necesario para establecer la comunicacion entre la lista y el detalle
-        //si el contexto que le esta llegando es una instancia de un activity:
         if(context instanceof Activity){
-        //voy a decirle a mi actividad que sea igual a dicho contesto. castin correspondiente:
             this.actividad= (Activity) context;
-            ////que la interface icomunicafragments sea igual ese contexto de la actividad:
             interfaceComunicaFragments= (iComunicaFragments) this.actividad;
-            //esto es necesario para establecer la comunicacion entre la lista y el detalle
         }
-
-       /* if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }*/
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-      // mListener = null;
     }
 
-    /*
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }*/
+
 }

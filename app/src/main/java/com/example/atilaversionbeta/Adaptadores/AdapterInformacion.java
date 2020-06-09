@@ -10,19 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.atilaversionbeta.Entidades.Municipio;
+import com.example.atilaversionbeta.Entidades.Informacion;
 import com.example.atilaversionbeta.R;
 
 import java.util.ArrayList;
 
-public class AdapterMunicipio extends RecyclerView.Adapter<AdapterMunicipio.ViewHolder> implements View.OnClickListener {
+public class AdapterInformacion extends RecyclerView.Adapter<AdapterInformacion.ViewHolder> implements View.OnClickListener {
 
     LayoutInflater inflater;
-    ArrayList<Municipio> model;
-
+    ArrayList<Informacion> model;
     private View.OnClickListener listener;
 
-    public AdapterMunicipio(Context context, ArrayList<Municipio> model){
+    public AdapterInformacion(Context context, ArrayList<Informacion> model){
         this.inflater = LayoutInflater.from(context);
         this.model = model;
     }
@@ -30,29 +29,29 @@ public class AdapterMunicipio extends RecyclerView.Adapter<AdapterMunicipio.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.lista_municipio, parent, false);
+        View view = inflater.inflate(R.layout.lista_informacion, parent, false);
         view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
-    public void setOnclickListener(View.OnClickListener listener){
-        this.listener = listener;
-    }
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-       /* String nombres = model.get(position).getNombre();
-        String descripcion = model.get(position).getDecripcion();
+        String nombres = model.get(position).getNombre();
+        String descripcion = model.get(position).getInfo();
         int imageid = model.get(position).getFoto();
         holder.nombres.setText(nombres);
         holder.descripcion.setText(descripcion);
-        holder.imagen.setImageResource(imageid);*/
+        holder.imagen.setImageResource(imageid);
     }
-
 
     @Override
     public int getItemCount() {
         return model.size();
+    }
+
+
+    public void setOnclickListener(View.OnClickListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -62,18 +61,17 @@ public class AdapterMunicipio extends RecyclerView.Adapter<AdapterMunicipio.View
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
         TextView nombres, descripcion;
         ImageView imagen;
 
-        public ViewHolder(@NonNull final View itemView) {
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-/*
-            nombres = itemView.findViewById(R.id.nombres);
-            descripcion = itemView.findViewById(R.id.descripcion);
-            imagen = itemView.findViewById(R.id.imagen_municipio);*/
+            nombres = itemView.findViewById(R.id.nombresI);
+            descripcion = itemView.findViewById(R.id.descripcionI);
+            imagen = itemView.findViewById(R.id.imagen_informacion1);
         }
-
     }
-
 }

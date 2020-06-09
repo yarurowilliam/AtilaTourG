@@ -19,22 +19,25 @@ import android.widget.Toast;
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
+import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperInformacion;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperSitio;
 import com.example.atilaversionbeta.Entidades.Actividad;
 import com.example.atilaversionbeta.Entidades.Evento;
+import com.example.atilaversionbeta.Entidades.Informacion;
 import com.example.atilaversionbeta.Entidades.Municipio;
 import com.example.atilaversionbeta.Entidades.Sitio;
 import com.example.atilaversionbeta.Fragments.Actividades.ActividadesFragment;
 import com.example.atilaversionbeta.Fragments.Actividades.DetalleActividadFragment;
-import com.example.atilaversionbeta.Fragments.Informacion.DetalleMunicipioFragment;
+import com.example.atilaversionbeta.Fragments.Informacion.DetalleInformacionFragment;
+import com.example.atilaversionbeta.Fragments.Informacion.InformacionFragment;
+import com.example.atilaversionbeta.Fragments.Municipio.DetalleMunicipioFragment;
 import com.example.atilaversionbeta.Fragments.Eventos.DetalleEventoFragment;
 import com.example.atilaversionbeta.Fragments.Eventos.EventosFragment;
 import com.example.atilaversionbeta.Fragments.MainFragment;
-import com.example.atilaversionbeta.Fragments.Informacion.MunicipiosFragment;
+import com.example.atilaversionbeta.Fragments.Municipio.MunicipiosFragment;
 import com.example.atilaversionbeta.Fragments.Sitios.DetalleSitioFragment;
 import com.example.atilaversionbeta.Fragments.Sitios.SitiosFragment;
 import com.example.atilaversionbeta.Interfaces.iComunicaFragments;
-import com.example.atilaversionbeta.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
@@ -53,10 +56,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DetalleActividadFragment detalleActividadFragment;
     DetalleEventoFragment detalleEventoFragment;
     DetalleSitioFragment detalleSitioFragment;
+    DetalleInformacionFragment detalleInformacionFragment;
+
 
     ConexionSQLiteHelperActividad actividadSave;
     ConexionSQLiteHelperEvento eventoSave;
     ConexionSQLiteHelperSitio sitioSave;
+    ConexionSQLiteHelperInformacion informacionSave;
 
     int contador=0;
 
@@ -78,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getApplicationContext().deleteDatabase("sitios");
         getApplicationContext().deleteDatabase("actividades");
         getApplicationContext().deleteDatabase("eventos");
+        getApplicationContext().deleteDatabase("informacion");
 
         actividadSave = new ConexionSQLiteHelperActividad(this,"actividades",null,1);
         guardarActividades();
@@ -87,6 +94,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         eventoSave = new ConexionSQLiteHelperEvento(this,"eventos",null,1);
         guardarEventos();
+
+        informacionSave = new ConexionSQLiteHelperInformacion(this,"informacion",null,1);
+        guardarInformacion();
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
@@ -116,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(menuItem.getItemId() == R.id.municipios){
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_fragment,new MunicipiosFragment());
+            fragmentTransaction.replace(R.id.container_fragment,new InformacionFragment());
             fragmentTransaction.commit();
         }
         if(menuItem.getItemId() == R.id.actividades){
@@ -226,6 +236,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    @Override
+    public void enviarInformacion(Informacion informacion) {
+
+        detalleInformacionFragment = new DetalleInformacionFragment();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto", informacion);
+        detalleInformacionFragment.setArguments(bundleEnvio);
+
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container_fragment, detalleInformacionFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
     //----------------------------------------------------------------------------ACTIVIDADES-----------------------------------------------------------------------------------///
 
     public void guardarActividades(){
@@ -325,6 +351,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         db.insert(AtilaBD.TABLA_EVENTO, null, values);
     }
 
+    //----------------------------------------------------------------------------INFORMACION-------------------------------------------------------------------------------------///
 
+    public void guardarInformacion(){ guardarLeyendaSirena();
+        guardarMusica();}
+
+    private void guardarLeyendaSirena() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,0);
+        values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Sirena del Rio Guatapuri");
+        values.put(AtilaBD.INFO_INFORMACION,"Este espacio es reservado para la informacion de la leyenda de la Sirena");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Este espacio es reservado para la informacion interna de la sirena");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    private void guardarMusica() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,0);
+        values.put(AtilaBD.TIPO_INFORMACION,"Musica");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Vallenato");
+        values.put(AtilaBD.INFO_INFORMACION,"La musica vallenata es el tipo de musica que mas se escucha en el municipioo");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Este espacio es reservado para la informacion interna de la sirena");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
 
 }
