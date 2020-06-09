@@ -36,8 +36,6 @@ public class ActividadesFragment extends Fragment{
     RecyclerView recyclerActividad;
     ArrayList<Actividad> listaActividades;
 
-    EditText txtnombre;
-
     Activity actividad;
     iComunicaFragments interfaceComunicaFragments;
 
@@ -47,12 +45,6 @@ public class ActividadesFragment extends Fragment{
         View view = inflater.inflate(R.layout.actividades_fragment,container,false);
         try{
             admin = new ConexionSQLiteHelperActividad(getContext(),"actividades",null,1);
-            updateBD();
-            if(municipioBuscado.equals("Valledupar")){
-                actividadesValledupar();
-            }else if(municipioBuscado.equals("Manaure")){
-                actividadesManaure();
-            }
             recyclerActividad = view.findViewById(R.id.recyclerActivida);
             consultarListaActividades();
         }catch (Exception e){
@@ -96,7 +88,6 @@ public class ActividadesFragment extends Fragment{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        updateBD();
     }
 
 
@@ -115,54 +106,5 @@ public class ActividadesFragment extends Fragment{
     }
 
 
-    private void updateBD(){
-        try{
-            SQLiteDatabase db = admin.getWritableDatabase();
-            db.delete(AtilaBD.TABLA_ACTIVIDAD,"",null);
-        }catch (Exception e){
-
-        }
-    }
-
-    //GUARDANDO LAS ACTIVIDADES POR MUNICIPIO
-
-    //VALLEDUPAR
-    public void actividadesValledupar(){
-        guardarCiclomonta();
-    }
-
-    public void guardarCiclomonta(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,0);
-        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
-        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Cilomontañismo");
-        values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
-        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.ciclomontain);
-        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.mountain);
-        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
-
-        long ID =  db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
-        Toast.makeText(getContext(),"AA:"+ID,Toast.LENGTH_LONG);
-    }
-
-    //MANAURE
-    public void actividadesManaure(){
-        guardarParapente();
-    }
-
-
-    public void guardarParapente(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,1);
-        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Manaure");
-        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Parapente");
-        values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
-        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.parapente);
-        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.parapente);
-        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
-        db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
-    }
 
 }

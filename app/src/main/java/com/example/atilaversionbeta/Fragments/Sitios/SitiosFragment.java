@@ -51,13 +51,6 @@ public class SitiosFragment extends Fragment {
         btnHotel = (ImageButton) view.findViewById(R.id.botonHotel);
         try{
             admin = new ConexionSQLiteHelperSitio(getContext(),"sitios",null,1);
-           /* updateBD();
-            if(municipioBuscado.equals("Valledupar")){
-                hotelesValledupar();
-                restaurantesValledupar();
-            }else if(municipioBuscado.equals("Manaure")){
-
-            }*/
             recyclerSitio = view.findViewById(R.id.recyclerSitios);
             btnRestaurante.setOnClickListener(new View.OnClickListener() {
                 @Override

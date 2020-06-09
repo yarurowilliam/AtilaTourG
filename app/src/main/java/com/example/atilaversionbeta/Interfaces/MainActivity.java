@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
+import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperSitio;
 import com.example.atilaversionbeta.Entidades.Actividad;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DetalleEventoFragment detalleEventoFragment;
     DetalleSitioFragment detalleSitioFragment;
 
+    ConexionSQLiteHelperActividad actividadSave;
     ConexionSQLiteHelperEvento eventoSave;
     ConexionSQLiteHelperSitio sitioSave;
 
@@ -64,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         try{
             SQLiteDatabase db = sitioSave.getWritableDatabase();
             db.delete(AtilaBD.TABLA_SITIO,"",null);
+            SQLiteDatabase db2 = actividadSave.getWritableDatabase();
+            db2.delete(AtilaBD.TABLA_ACTIVIDAD,"",null);
         }catch (Exception e){
         }
     }
@@ -76,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navigationView);
+
+
+        actividadSave = new ConexionSQLiteHelperActividad(this,"actividades",null,1);
+        guardarActividades();
 
         sitioSave = new ConexionSQLiteHelperSitio(this,"sitios",null,1);
         guardarSitios();
@@ -99,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        //para cerrar automaticamente el menu
         drawerLayout.closeDrawer(GravityCompat.START);
         if(menuItem.getItemId() == R.id.home){
             fragmentManager = getSupportFragmentManager();
@@ -135,6 +142,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    //===========================================================================================//
+    //=======================================INTERFACES==========================================//
+    //===========================================================================================//
     @Override
     public void enviarMunicipio(Municipio municipio) {
 
@@ -197,8 +207,54 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
 
     }
+    //===========================================================================================//
+    //===========================================================================================//
+    //===========================================================================================//
+    //---------------------------------------------------------------------------------------------///
+    //===========================================================================================//
+    //=======================================ACTIVIDADES==============================================//
+    //===========================================================================================//
 
-    //SITIOS............................................................
+
+    public void guardarActividades(){
+        guardarCiclomonta();
+        guardarParapente();
+    }
+
+    public void guardarCiclomonta(){
+        SQLiteDatabase db = actividadSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,0);
+        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
+        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Cilomontañismo");
+        values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
+        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.ciclomontain);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
+
+        db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
+    }
+
+    public void guardarParapente(){
+        SQLiteDatabase db = actividadSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,1);
+        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Manaure");
+        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Parapente");
+        values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
+        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.parapente);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.parapente);
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
+        db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
+    }
+
+    //===========================================================================================//
+    //===========================================================================================//
+    //===========================================================================================//
+    //---------------------------------------------------------------------------------------------///
+    //===========================================================================================//
+    //=======================================SITIOS==============================================//
+    //===========================================================================================//
     public void guardarSitios(){
         restaurantesSitios();
         hotelesSitios();
@@ -242,7 +298,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
-    //.....................................................................
+    //===========================================================================================//
+    //===========================================================================================//
+    //===========================================================================================//
 
 
 
