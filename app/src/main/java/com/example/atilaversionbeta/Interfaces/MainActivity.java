@@ -59,18 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        updateBD();
     }
 
-    private void updateBD(){
-        try{
-            SQLiteDatabase db = sitioSave.getWritableDatabase();
-            db.delete(AtilaBD.TABLA_SITIO,"",null);
-            SQLiteDatabase db2 = actividadSave.getWritableDatabase();
-            db2.delete(AtilaBD.TABLA_ACTIVIDAD,"",null);
-        }catch (Exception e){
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navigationView);
 
+        getApplicationContext().deleteDatabase("sitios");
+        getApplicationContext().deleteDatabase("actividades");
+        getApplicationContext().deleteDatabase("eventos");
 
         actividadSave = new ConexionSQLiteHelperActividad(this,"actividades",null,1);
         guardarActividades();
@@ -88,6 +81,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         sitioSave = new ConexionSQLiteHelperSitio(this,"sitios",null,1);
         guardarSitios();
 
+        eventoSave = new ConexionSQLiteHelperEvento(this,"eventos",null,1);
+        guardarEventos();
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
@@ -141,10 +136,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
+    //----------------------------------------------------------------------------interfaces-----------------------------------------------------------------------------------///
 
-    //===========================================================================================//
-    //=======================================INTERFACES==========================================//
-    //===========================================================================================//
     @Override
     public void enviarMunicipio(Municipio municipio) {
 
@@ -207,14 +200,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
 
     }
-    //===========================================================================================//
-    //===========================================================================================//
-    //===========================================================================================//
-    //---------------------------------------------------------------------------------------------///
-    //===========================================================================================//
-    //=======================================ACTIVIDADES==============================================//
-    //===========================================================================================//
 
+    //----------------------------------------------------------------------------ACTIVIDADES-----------------------------------------------------------------------------------///
 
     public void guardarActividades(){
         guardarCiclomonta();
@@ -248,13 +235,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
     }
 
-    //===========================================================================================//
-    //===========================================================================================//
-    //===========================================================================================//
-    //---------------------------------------------------------------------------------------------///
-    //===========================================================================================//
-    //=======================================SITIOS==============================================//
-    //===========================================================================================//
+    //----------------------------------------------------------------------------SITIOS---------------------------------------------------------------------------------------///
+
     public void guardarSitios(){
         restaurantesSitios();
         hotelesSitios();
@@ -298,9 +280,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
-    //===========================================================================================//
-    //===========================================================================================//
-    //===========================================================================================//
+    //----------------------------------------------------------------------------EVENTOS-------------------------------------------------------------------------------------///
+
+    public void guardarEventos(){
+        guardarFestival();
+    }
+
+    public void guardarFestival(){
+        SQLiteDatabase db = eventoSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_EVENTO,0);
+        values.put(AtilaBD.MUNICIPIO_EVENTO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_EVENTO,"Festival Vallenato 2021");
+        values.put(AtilaBD.INFO_EVENTO,"Este festival vallenato se va a realizar el año 2021 por la cuarentena");
+        values.put(AtilaBD.FOTO_EVENTO, R.drawable.senderismo);
+        values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.senderdescrip);
+        values.put(AtilaBD.DESCRIPCION_EVENTO, "Este espacio es reservado para la informacion interna del evento");
+
+        db.insert(AtilaBD.TABLA_EVENTO, null, values);
+    }
 
 
 

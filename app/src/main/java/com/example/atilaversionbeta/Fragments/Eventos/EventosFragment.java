@@ -43,12 +43,6 @@ public class EventosFragment extends Fragment {
         View view = inflater.inflate(R.layout.eventos_fragment,container,false);
         try{
             admin = new ConexionSQLiteHelperEvento(getContext(),"eventos",null,1);
-            updateBD();
-            if(municipioBuscado.equals("Valledupar")){
-                eventosValledupar();
-            }else if(municipioBuscado.equals("Manaure")){
-
-            }
             recyclerEvento = view.findViewById(R.id.recyclerEventos);
             consultarListaEventos();
         }catch (Exception e){
@@ -90,7 +84,6 @@ public class EventosFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        //updateBD();
     }
 
     @Override
@@ -116,23 +109,5 @@ public class EventosFragment extends Fragment {
         }
     }
 
-    //VALLEDUPAR
-    public void eventosValledupar(){
-        guardarFestival();
-    }
 
-    public void guardarFestival(){
-        SQLiteDatabase db = admin.getWritableDatabase();
-        ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_EVENTO,0);
-        values.put(AtilaBD.MUNICIPIO_EVENTO,"Valledupar");
-        values.put(AtilaBD.NOMBRE_EVENTO,"Festival Vallenato 2021");
-        values.put(AtilaBD.INFO_EVENTO,"Este festival vallenato se va a realizar el año 2021 por la cuarentena");
-        values.put(AtilaBD.FOTO_EVENTO, R.drawable.senderismo);
-        values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.senderdescrip);
-        values.put(AtilaBD.DESCRIPCION_EVENTO, "Este espacio es reservado para la informacion interna del evento");
-
-        long ID =  db.insert(AtilaBD.TABLA_EVENTO, null, values);
-        Toast.makeText(getContext(),"AA:"+ID,Toast.LENGTH_LONG);
-    }
 }
