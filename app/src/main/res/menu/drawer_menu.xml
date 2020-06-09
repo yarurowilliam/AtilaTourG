@@ -11,7 +11,7 @@
             <item
                 android:id="@+id/municipios"
                 android:icon="@drawable/historia"
-                android:title="Informacion Municipios"/>
+                android:title="Informacion Cultural"/>
 
             <item
                 android:id="@+id/actividades"
