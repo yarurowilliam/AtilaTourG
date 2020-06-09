@@ -1,4 +1,4 @@
-package com.example.atilaversionbeta.Interfaces;
+package com.example.atilaversionbeta;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -26,17 +26,18 @@ import com.example.atilaversionbeta.Entidades.Municipio;
 import com.example.atilaversionbeta.Entidades.Sitio;
 import com.example.atilaversionbeta.Fragments.Actividades.ActividadesFragment;
 import com.example.atilaversionbeta.Fragments.Actividades.DetalleActividadFragment;
-import com.example.atilaversionbeta.Fragments.DetalleMunicipioFragment;
+import com.example.atilaversionbeta.Fragments.Informacion.DetalleMunicipioFragment;
 import com.example.atilaversionbeta.Fragments.Eventos.DetalleEventoFragment;
 import com.example.atilaversionbeta.Fragments.Eventos.EventosFragment;
 import com.example.atilaversionbeta.Fragments.MainFragment;
-import com.example.atilaversionbeta.Fragments.MunicipiosFragment;
+import com.example.atilaversionbeta.Fragments.Informacion.MunicipiosFragment;
 import com.example.atilaversionbeta.Fragments.Sitios.DetalleSitioFragment;
 import com.example.atilaversionbeta.Fragments.Sitios.SitiosFragment;
+import com.example.atilaversionbeta.Interfaces.iComunicaFragments;
 import com.example.atilaversionbeta.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
 
 
     public static String municipioBuscado;

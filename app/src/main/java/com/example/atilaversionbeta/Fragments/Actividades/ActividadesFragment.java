@@ -1,7 +1,6 @@
 package com.example.atilaversionbeta.Fragments.Actividades;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +8,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,10 +17,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.atilaversionbeta.Adaptadores.AdapterActividad;
-import com.example.atilaversionbeta.BaseDatos.AtilaBD;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Entidades.Actividad;
-import com.example.atilaversionbeta.Interfaces.MainActivity;
+import com.example.atilaversionbeta.MainActivity;
 import com.example.atilaversionbeta.Interfaces.iComunicaFragments;
 import com.example.atilaversionbeta.R;
 

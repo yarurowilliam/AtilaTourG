@@ -1,4 +1,4 @@
-package com.example.atilaversionbeta.Fragments;
+package com.example.atilaversionbeta.Fragments.Informacion;
 
 import android.app.Activity;
 import android.content.Context;

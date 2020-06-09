@@ -1,4 +1,4 @@
-package com.example.atilaversionbeta;
+package com.example.atilaversionbeta.InicioAPP;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.atilaversionbeta.Interfaces.MainActivity;
+import com.example.atilaversionbeta.R;
 
 public class SplashActivity extends AppCompatActivity {
 

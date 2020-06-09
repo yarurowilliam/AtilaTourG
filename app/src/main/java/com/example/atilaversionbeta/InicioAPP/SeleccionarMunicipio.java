@@ -1,4 +1,4 @@
-package com.example.atilaversionbeta;
+package com.example.atilaversionbeta.InicioAPP;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.example.atilaversionbeta.Interfaces.MainActivity;
+import com.example.atilaversionbeta.MainActivity;
+import com.example.atilaversionbeta.R;
 
 public class SeleccionarMunicipio extends AppCompatActivity {
     private Button boton,botonBosconia;

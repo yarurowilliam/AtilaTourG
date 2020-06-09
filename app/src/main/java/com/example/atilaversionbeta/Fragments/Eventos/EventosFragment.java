@@ -1,7 +1,6 @@
 package com.example.atilaversionbeta.Fragments.Eventos;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,7 +20,7 @@ import com.example.atilaversionbeta.Adaptadores.AdapterEvento;
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
 import com.example.atilaversionbeta.Entidades.Evento;
-import com.example.atilaversionbeta.Interfaces.MainActivity;
+import com.example.atilaversionbeta.MainActivity;
 import com.example.atilaversionbeta.Interfaces.iComunicaFragments;
 import com.example.atilaversionbeta.R;
 

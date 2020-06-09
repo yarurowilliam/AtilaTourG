@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.atilaversionbeta.Interfaces.MainActivity;
+import com.example.atilaversionbeta.MainActivity;
 import com.example.atilaversionbeta.R;
 
 public class MainFragment extends Fragment {
