@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     ConexionSQLiteHelperActividad actividadSave;
     ConexionSQLiteHelperEvento eventoSave;
     ConexionSQLiteHelperSitio sitioSave;
+
+    int contador=0;
 
     @Override
     protected void onDestroy() {
@@ -134,6 +137,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         }
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(contador==0){
+            Toast.makeText(getApplicationContext(),"Presione de nuevo para salir",Toast.LENGTH_SHORT).show();
+            contador++;
+        }else{
+            super.onBackPressed();
+        }
+        new CountDownTimer(3000,1000){
+            @Override
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                contador=0;
+            }
+        }.start();
     }
 
     //----------------------------------------------------------------------------interfaces-----------------------------------------------------------------------------------///
