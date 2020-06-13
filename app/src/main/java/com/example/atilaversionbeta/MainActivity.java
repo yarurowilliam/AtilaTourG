@@ -468,6 +468,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarLeyendaFrancisco();
         guardarEcceHomo();
         guardarMusica();
+        guardarJuglarTobias();
     }
 
     private void guardarLeyendaVallenata() {
@@ -553,5 +554,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
+
+    private void guardarJuglarTobias() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,5);
+        values.put(AtilaBD.TIPO_INFORMACION,"Juglares");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Tobías Enrique Pumarejo Gutiérrez");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Nació en Valledupar, Cesar el 8 de agosto de 1906\nMuere en Barranquilla, el 8 de abril de 1995.\n\nFue parte del jurado del primer Festival Vallenato, al lado de Rafael Escalona y Gustavo Gutiérrez. Fue también el primer compositor vallenato desligado de los instrumentos, el primer miembro de la sociedad de Valledupar que cantó y compuso este ritmo y a quien le cupo el honor de abrirle las puertas en el Club de Valledupar a este nuevo aire musical.\n" +
+                "\n" +
+                "Sus estudios de bachillerato los hizo en Medellín en el Liceo de la Universidad de Antioquia, del que recibió su mayor influencia académica, poética y musical. En Medellín, al lado de sus amigos del Valle de Upar fundaron la Orquesta Magdalenense, integrada por José María y Pedro Castro Monsalvo, Pedro y Celso Domingo Castro Trespalacios y Ovidio Palmera.\n" +
+                "\n" +
+                "Cabe destacar que el vallenato en esta orquesta no se ejecutaba acordeón, caja ni guacharaca, sino piano, violín, guitarra, saxo y flauta, los instrumentos musicales más relevantes de la época.\n" +
+                "\n" +
+                "Como compositor, fue un enamorado de la vida, de la naturaleza, de los animales y en especial de las mujeres a las que amó con devoción.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://www.ecured.cu/Tobías_Enrique_Pumarejo_Gutiérrez");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
 
 }

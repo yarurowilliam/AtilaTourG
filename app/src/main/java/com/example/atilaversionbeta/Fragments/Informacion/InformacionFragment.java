@@ -36,7 +36,7 @@ public class InformacionFragment extends Fragment {
     RecyclerView recyclerInformacion;
     ArrayList<Informacion> listaInformacion;
     String tipoBusqueda;
-    Button btnLeyenda,btnMusica;
+    Button btnLeyenda,btnMusica,btnJuglares;
 
     Activity actividad;
     iComunicaFragments interfaceComunicaFragments;
@@ -48,13 +48,14 @@ public class InformacionFragment extends Fragment {
         try{
             btnLeyenda = (Button) view.findViewById(R.id.botonLeyendas);
             btnMusica = (Button) view.findViewById(R.id.botonMusica);
+            btnJuglares = (Button) view.findViewById(R.id.botonJuglares);
             admin = new ConexionSQLiteHelperInformacion(getContext(),"informacion",null,1);
             recyclerInformacion = view.findViewById(R.id.recyclerInformacion);
             btnLeyenda.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     tipoBusqueda = "Leyenda";
-                    Toast.makeText(getContext(), "LEYENDAS EN VALLEDUPAR HPTA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Seleccionó las leyendas!", Toast.LENGTH_SHORT).show();
                     consultarInformacion();
                 }
             });
@@ -62,7 +63,15 @@ public class InformacionFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     tipoBusqueda = "Musica";
-                    Toast.makeText(getContext(), "MUSICA EN VALLEDUPAR HPTA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Seleccionó la musica!", Toast.LENGTH_SHORT).show();
+                    consultarInformacion();
+                }
+            });
+            btnJuglares.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Juglares";
+                    Toast.makeText(getContext(), "Seleccionó los juglares!", Toast.LENGTH_SHORT).show();
                     consultarInformacion();
                 }
             });
