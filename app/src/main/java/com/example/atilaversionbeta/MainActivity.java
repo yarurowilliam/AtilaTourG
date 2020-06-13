@@ -264,6 +264,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarArtesania();
         guardarParranda();
         guardarNadarRio();
+        guardarCityTour();
     }
 
     public void guardarCiclomonta(){
@@ -349,7 +350,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.senderdescrip);
         values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "A su paso por el norte de Valledupar se encuentra el balneario de Hurtado, principal lugar de recreación y diversión de la capital del Cesar. En este mismo sitio se encuentran el Pueblito Vallenato y el parque Lineal. Además, alimenta de agua al acueducto de dicha ciudad.");
         values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://es.wikipedia.org/wiki/Río_Guatapurí");
-        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Río Guatapurío\n- La Mina\n- Chemesquemena\n- La Mesa\n- Ría Badillo\n- La Vega\n- El Mojao");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Río Guatapurío\n- La Mina\n- Chemesquemena\n- La Mesa\n- Río Badillo\n- La Vega\n- El Mojao");
         values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/place/Balneario+Hurtado/@10.4489877,-73.2702838,13z/data=!4m8!1m2!2m1!1sbalneario+hurtado!3m4!1s0x8e8abbfede10430b:0xe5ae13c22c036433!8m2!3d10.4235315!4d-73.255595");
 
 
@@ -365,10 +366,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.INFO_ACTIVIDAD,"Valledupar es reconocido por sus monumentos y glorietas, en homenaje a su historia y cultura. En la ciudad hay más de 20 monumentos y glorietas, la mayoría dedicados a la música y cultura tradicional vallenata.");
         values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.senderismo);
         values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.senderdescrip);
-        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "A su paso por el norte de Valledupar se encuentra el balneario de Hurtado, principal lugar de recreación y diversión de la capital del Cesar. En este mismo sitio se encuentran el Pueblito Vallenato y el parque Lineal. Además, alimenta de agua al acueducto de dicha ciudad.");
-        values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://es.wikipedia.org/wiki/Río_Guatapurí");
-        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Río Guatapurío\n- La Mina\n- Chemesquemena\n- La Mesa\n- Ría Badillo\n- La Vega\n- El Mojao");
-        values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/place/Balneario+Hurtado/@10.4489877,-73.2702838,13z/data=!4m8!1m2!2m1!1sbalneario+hurtado!3m4!1s0x8e8abbfede10430b:0xe5ae13c22c036433!8m2!3d10.4235315!4d-73.255595");
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "PaseoVallenato Tour es una compañía de servicios turísticos que ofrece experiencias extraordinarias y significativas en destinos únicos del caribe colombiano, especialmente, en los departamentos del Cesar, La Guajira, El Magdalena y el Sur de Bolivar.\n" +
+                "\n" +
+                "Gracias a que su fundadora María Elisa Ayala F. es una gran conocedora de la cultura y el folclor vallenato y una digna representante y heredera de juglares y cantores, los paquetes turísticos ofrecidos por PaseoVallenato Tour son únicos; es decir, cada uno cuenta con recorridos y experiencias diferentes.\n" +
+                "\n" +
+                "El propósito de esta compañía turística es dar a conocer los orígenes, ancestros, tradiciones y el folclor único de la región caribe; por esta razón, los planes cuentan con guías calificados, al igual que música en vivo para que viajeros y turistas vivan una experiencia completa e inigualable.");
+        values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://paseovallenato.com");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Glorieta \n- Glorieta Los Juglares\n- Glorieta Mi Pedazo de Acordeón\n- Glorieta Los Músicos\n- Río Guatapurí \n- Museo del Acordeón");
+        values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/place/Paseo+Vallenato+Tour/@10.4714877,-73.2582133,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab99328149105:0x9346ce9451262adf!8m2!3d10.4714877!4d-73.2560246");
 
 
         db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
