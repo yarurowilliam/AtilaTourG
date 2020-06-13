@@ -452,7 +452,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.CODIGO_EVENTO,0);
         values.put(AtilaBD.MUNICIPIO_EVENTO,"Valledupar");
         values.put(AtilaBD.NOMBRE_EVENTO,"Festival Vallenato 2021");
-        values.put(AtilaBD.INFO_EVENTO,"Este festival vallenato se va a realizar el año 2021 por la cuarentena");
         values.put(AtilaBD.FOTO_EVENTO, R.drawable.senderismo);
         values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.senderdescrip);
         values.put(AtilaBD.DESCRIPCION_EVENTO, "Este espacio es reservado para la informacion interna del evento");
@@ -536,7 +535,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
-
 
     private void guardarMusica() {
         SQLiteDatabase db = informacionSave.getWritableDatabase();

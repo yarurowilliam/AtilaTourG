@@ -20,10 +20,11 @@ public class AtilaBD {
     public static String CODIGO_EVENTO = "codigo";
     public static String MUNICIPIO_EVENTO = "municipio";
     public static String NOMBRE_EVENTO = "nombre";
-    public static String INFO_EVENTO = "info";
     public static String FOTO_EVENTO= "foto";
     public static String IMG_DETALLE_EVENTO = "imageDetalle";
     public static String DESCRIPCION_EVENTO = "descripcion";
+    public static String URLINFO_EVENTO= "urlinfo";
+
 
     //CONTRACT SITIOS
     public static String TABLA_SITIO = "sitios";
@@ -54,11 +55,11 @@ public class AtilaBD {
             "INTEGER,"+ MUNICIPIO_ACTIVIDAD+" " +" TEXT," +  NOMBRE_ACTIVIDAD+" " +" TEXT,"
             + FOTO_ACTIVIDAD+" " +" INTEGER,"+IMG_DETALLE_ACTIVIDAD+" "+ "INTEGER,"+DESCRIPCION_ACTIVIDAD+" "+ "TEXT,"+URLINFO_ACTIVIDAD+" "+ "TEXT,"+LUGARES_ACTIVIDAD+" "+ "TEXT,"+URLMAPS_ACTIVIDAD+" "+ "TEXT)";
 
-    //CREAR TABLA SITIO
+    //CREAR TABLA EVENTO
     public static final  String CREAR_TABLA_EVENTO="CREATE TABLE" +
             " " + TABLA_EVENTO + " (" +CODIGO_EVENTO+" "+
-            "INTEGER,"+ MUNICIPIO_EVENTO+" " +" TEXT," +  NOMBRE_EVENTO+" " +" TEXT,"+ INFO_EVENTO+" " +" TEXT,"
-            + FOTO_EVENTO+" " +" INTEGER,"+IMG_DETALLE_EVENTO+" "+ "INTEGER,"+DESCRIPCION_EVENTO+" "+ "TEXT)";
+            "INTEGER,"+ MUNICIPIO_EVENTO+" " +" TEXT," +  NOMBRE_EVENTO+" " +" TEXT,"
+            + FOTO_EVENTO+" " +" INTEGER,"+IMG_DETALLE_EVENTO+" "+ "INTEGER,"+DESCRIPCION_EVENTO+" "+ "TEXT,"+URLINFO_EVENTO+" "+ "TEXT)";
 
     //CREAR TABLA SITIO
     public static final  String CREAR_TABLA_SITIO="CREATE TABLE" +

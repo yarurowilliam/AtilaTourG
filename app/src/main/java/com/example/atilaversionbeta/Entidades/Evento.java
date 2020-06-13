@@ -6,21 +6,21 @@ public class Evento implements Serializable {
     private int codigo;
     private String municipio;
     private String nombre;
-    private String info;
     private int foto;
     private int imagenDetalle;
     private String descripcion;
+    private String linkInfo;
 
     public Evento(){}
 
-    public Evento(int codigo, String municipio, String nombre, String info, int foto, int imagenDetalle, String descripcion) {
+    public Evento(int codigo, String municipio, String nombre, int foto, int imagenDetalle, String descripcion, String linkInfo) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.nombre = nombre;
-        this.info = info;
         this.foto = foto;
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
+        this.linkInfo = linkInfo;
     }
 
     public int getCodigo() {
@@ -47,14 +47,6 @@ public class Evento implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
     public int getFoto() {
         return foto;
     }
@@ -77,5 +69,13 @@ public class Evento implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getLinkInfo() {
+        return linkInfo;
+    }
+
+    public void setLinkInfo(String linkInfo) {
+        this.linkInfo = linkInfo;
     }
 }
