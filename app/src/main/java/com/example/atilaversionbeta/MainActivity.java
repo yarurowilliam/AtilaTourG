@@ -540,13 +540,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void guardarMusica() {
         SQLiteDatabase db = informacionSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_INFORMACION,0);
+        values.put(AtilaBD.CODIGO_INFORMACION,4);
         values.put(AtilaBD.TIPO_INFORMACION,"Musica");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
         values.put(AtilaBD.NOMBRE_INFORMACION,"Vallenato");
         values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
         values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
-        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Este espacio es reservado para la informacion interna de la sirena");
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "El vallenato es un género musical autóctono de la Región Caribe de Colombia con su origen en la antigua provincia de Padilla (actuales sur de La Guajira, norte del Cesar y oriente del Magdalena). Tiene notable influencia de la inmigración europea, ya que el acordeón fue traído por pobladores alemanes a Riohacha, La Guajira, a finales del siglo XIX, y tanto la organización estrófica como la métrica se valen de la tradición española; por otra parte, el componente de los esclavos afrocolombianos hace presencia con la caja vallenata, una especie de tambor que en gran medida le da el ritmo a la melodía del acordeón, y por último lo indígena se evidencia con la guacharaca.1\u200B Su popularidad se ha extendido hoy a todas las regiones de Colombia, a países vecinos como Ecuador, Panamá, Venezuela e incluso países de Europa. Se interpreta tradicionalmente con tres instrumentos: el acordeón diatónico, la guacharaca y la caja vallenata. Los ritmos o aires musicales del vallenato son el paseo, el merengue, la puya, el son y la tambora. El vallenato también se interpreta con guitarra y con la instrumentación de la cumbia en cumbiambas " +
+                "y grupos de millo.\n\nArtistas como:\n-El churo’ Díaz\n-Martín Elias\n-Mono Zabaleta\n-Silvestre Dangond\n-Kvrass\n-Diomedes Díaz\n-Jorge Oñate\n-Peter Manjarrés\n-Poncho Zuleta\n-Iván Villazón\n\nEstos son los artistas más solicitados.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://es.wikipedia.org/wiki/Vallenato");
 
         long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
