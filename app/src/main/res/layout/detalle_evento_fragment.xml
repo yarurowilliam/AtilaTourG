@@ -14,13 +14,20 @@
 
             <TextView
                 android:id="@+id/nombreEvento"
-                android:text="Detalle Evento"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:paddingBottom="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/annie_use_your_telescope"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:text="Evento"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -35,8 +42,16 @@
             </ImageView>
 
             <TextView
-                android:text="Informacion:"
+                android:text="¡Informacion!"
                 android:paddingLeft="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/annie_use_your_telescope"
+                android:textColor="@android:color/white"
+                android:gravity="center"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
@@ -45,32 +60,45 @@
             </TextView>
             <TextView
                 android:id="@+id/descripcion_detalleE"
-                android:text="Goku"
+                android:text="Informacion de la activity"
+                android:fontFamily="@font/annie_use_your_telescope"
                 android:gravity="center"
-                android:textSize="14dp"
-                android:textStyle="italic"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
 
             </TextView>
 
+            <Button
+                android:id="@+id/btnLinkEvent"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/annie_use_your_telescope"
+                android:text="¡MAS INFORMACIÓN!" />
 
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:text="INFO: AUN SE ESTA CONSTRUYENDO EL RESTO DE LA INFORMACION"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
 
     </ScrollView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:background="@color/colorPrimary"
-        android:paddingLeft="10dp"
-        android:text="INFO: AUN SE ESTA CONSTRUYENDO EL RESTO DE LA INFORMACION"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+
 
 </LinearLayout>

@@ -444,6 +444,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void guardarEventos(){
         guardarFestival();
+        guardarFestivalQuinta();
     }
 
     public void guardarFestival(){
@@ -451,13 +452,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ContentValues values =  new ContentValues();
         values.put(AtilaBD.CODIGO_EVENTO,0);
         values.put(AtilaBD.MUNICIPIO_EVENTO,"Valledupar");
-        values.put(AtilaBD.NOMBRE_EVENTO,"Festival Vallenato 2021");
+        values.put(AtilaBD.NOMBRE_EVENTO,"Festival de la Leyenda Vallenata");
         values.put(AtilaBD.FOTO_EVENTO, R.drawable.senderismo);
         values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.senderdescrip);
-        values.put(AtilaBD.DESCRIPCION_EVENTO, "Este espacio es reservado para la informacion interna del evento");
+        values.put(AtilaBD.DESCRIPCION_EVENTO, "El Festival de la Leyenda Vallenata, llamado también Festival Vallenato, es el evento más importante del vallenato. Se celebra anualmente a finales de abril o principios de mayo desde 1968 en Valledupar, y es organizado por la Fundación Festival de la Leyenda Vallenata, la cual vela por la defensa y difusión de la expresiones folclóricas y populares que rodean la música vallenata. El festival busca preservar cuatro de los cinco aires o ritmos del vallenato: paseo, merengue, son y puya. Además, el género de la piqueria, la parranda, la poesía campesina, cuentos, leyendas, mitos, tradición oral, expresiones literarias, socioculturales y artísticas asociadas al vallenato.");
+        values.put(AtilaBD.URLINFO_EVENTO,"https://festivalvallenato.com");
 
         db.insert(AtilaBD.TABLA_EVENTO, null, values);
     }
+
+    public void guardarFestivalQuinta(){
+        SQLiteDatabase db = eventoSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_EVENTO,1);
+        values.put(AtilaBD.MUNICIPIO_EVENTO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_EVENTO,"Festival de la Quinta");
+        values.put(AtilaBD.FOTO_EVENTO, R.drawable.senderismo);
+        values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.senderdescrip);
+        values.put(AtilaBD.DESCRIPCION_EVENTO, "EL FESTIVAL DE LA QUINTA es una iniciativa de un grupo de empresarios y gestores culturales del centro histórico de la ciudad de Valledupar. Quienes buscamos generar espacios culturales independientes, Incentivar el talento local y las nuevas generaciones de talentos en otras áreas y expresiones culturales que permitan aumentar la oferta de estas en la Ciudad.\n" +
+                "\n" +
+                "En Valledupar siempre hemos impulsado y sobresalido en el ámbito cultural y creativo, a tal punto de ser una de las ciudades que mas ha explotado este potencial innato.");
+        values.put(AtilaBD.URLINFO_EVENTO,"https://www.festivaldelaquinta.com");
+
+        db.insert(AtilaBD.TABLA_EVENTO, null, values);
+    }
+
 
     //----------------------------------------------------------------------------INFORMACION-------------------------------------------------------------------------------------///
 
