@@ -12,6 +12,7 @@ public class Informacion implements Serializable {
     private int imagenDetalle;
     private String descripcion;
 
+
     public Informacion(){}
 
     public Informacion(int codigo, String municipio, String tipo, String nombre, String info, int foto, int imagenDetalle, String descripcion) {

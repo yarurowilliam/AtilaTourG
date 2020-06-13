@@ -61,8 +61,9 @@ public class AdapterActividad extends RecyclerView.Adapter<AdapterActividad.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView nombres, descripcion;
+        TextView nombres, descripcion, lugares;
         ImageView imagen;
+
 
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -70,6 +71,7 @@ public class AdapterActividad extends RecyclerView.Adapter<AdapterActividad.View
             nombres = itemView.findViewById(R.id.nombresA);
             descripcion = itemView.findViewById(R.id.descripcionA);
             imagen = itemView.findViewById(R.id.imagen_actividad);
+
         }
 
     }

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.atilaversionbeta.BaseDatos.AtilaBD;
+import com.example.atilaversionbeta.Datos.ConexionSQLiteHelper;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperInformacion;
@@ -39,6 +41,8 @@ import com.example.atilaversionbeta.Fragments.Sitios.DetalleSitioFragment;
 import com.example.atilaversionbeta.Fragments.Sitios.SitiosFragment;
 import com.example.atilaversionbeta.Interfaces.iComunicaFragments;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, iComunicaFragments {
 
@@ -256,7 +260,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void guardarActividades(){
         guardarCiclomonta();
-        guardarParapente();
+        guardarCaminata();
+        guardarArtesania();
     }
 
     public void guardarCiclomonta(){
@@ -265,23 +270,64 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.CODIGO_ACTIVIDAD,0);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Cilomontañismo");
-        values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
-        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.ciclomontain);
-        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.mountain);
-        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
+        values.put(AtilaBD.INFO_ACTIVIDAD,"El ciclomontañismo es uno de los deportes mas practicados en el departamento del Cesar, por tener varios lugares para su practica");
+        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.mountain);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.ciclomontain);
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "El ciclismo de montaña, considerado un deporte de riesgo, es un ciclismo de competición realizado en circuitos naturales generalmente a través de bosques por caminos angostos con cuestas empinadas y descensos muy rápidos.");
+        values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://es.wikipedia.org/wiki/Ciclismo_de_montaña");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "-Cerro de eccehomo\n-Guacoche\n-La Mesa\n-Vuelta del Jabo\n-Los Corazones\n-Puente Blanco\n-La Mina\n-Atanque\n-Chemesquemena");
+        values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/dir/10.5020496,-73.271639/10.5020601,-73.2716283/@10.5015274,-73.2692626,17z");
+
 
         db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
     }
 
-    public void guardarParapente(){
+    public void guardarCaminata(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
         values.put(AtilaBD.CODIGO_ACTIVIDAD,1);
+        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
+        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Senderismo");
+        values.put(AtilaBD.INFO_ACTIVIDAD,"Este plan es perfecto para todo aquel que disfrute ejercitar su cuerpo, disfrutando de la naturaleza y el clima fresco de la mañana.");
+        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.senderismo);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.senderdescrip);
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "El senderismo es una actividad no competitiva que consiste en caminar, preferentemente por el campo o la montaña, siguiendo un itinerario determinado. Se acostumbra a realizar sobre senderos balizados y homologados por el organismo competente de cada país, pero también por rutas no señalizadas.");
+        values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://es.wikipedia.org/wiki/Senderismo");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Mirador del Santo Ecce Homo: Si visitas Valledupar puedes realizar caminatas por el parque lineal del rio Guatapurí y conectar con los senderos del cerro del mirador del Santo Ecce Homo.");
+        values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/place/Capilla+Santo+EcceHomo/@10.5076273,-73.2611208,15.83z/data=!4m5!3m4!1s0x8e8ab816d1d944b3:0xbc64a367cb19b61d!8m2!3d10.5093017!4d-73.2610758");
+
+
+        db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
+    }
+
+    public void guardarArtesania(){
+        SQLiteDatabase db = actividadSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,1);
+        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
+        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Artesania");
+        values.put(AtilaBD.INFO_ACTIVIDAD,"En los municipos de Pueblo Bello, Chimichagua y Valledupar puede encontrar artesanías locales como mochilas arhuacas y kankuamas, esteras y collares. Además de las populares hamacas y artículos propios de la región perfectos como souvenirs.");
+        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.senderismo);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.senderdescrip);
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Artesanía se refiere al trabajo de un artesano o artesana (normalmente realizado de forma manual por una persona, sin el auxilio de maquinaria o automatizaciones), como al objeto o producto obtenido en el que cada pieza es distinta a las demás. La artesanía como actividad material se diferencia del trabajo en serie o industrial. Para que una artesanía sea tal debe ser trabajada a mano y cuanto menos procesos industriales tenga, más artesanal va a ser. La artesanía es un objeto totalmente cultural, ya que tiene la particularidad de variar dependiendo del contexto social, el paisaje, el clima, los recursos y la historia del lugar donde se realiza.");
+        values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://es.wikipedia.org/wiki/Artesanía");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Centro Artesanal Calle Grande\n- Parque de las Madres");
+        values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/place/Centro+Artesanal+Calle+Grande/@10.4761878,-73.2479444,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9b15e55655b:0x87bb632f5f429c49!8m2!3d10.4761878!4d-73.2457557");
+
+
+        db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
+    }
+
+
+    public void guardarParapente(){
+        SQLiteDatabase db = actividadSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,100);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Manaure");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Parapente");
         values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
         values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.parapente);
-        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.parapente);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.paramentedetll);
         values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
         db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
     }

@@ -10,13 +10,17 @@ public class Actividad implements Serializable {
     private int foto;
     private int imagenDetalle;
     private String descripcion;
+    private String urlInfo;
+    private String lugares;
+    private String urlMaps;
+
 
 
     public Actividad(){
 
     }
 
-    public Actividad(int codigo,String municipio,String nombre, String info, int foto, int imagenDetalle, String descripcion) {
+    public Actividad(int codigo, String municipio, String nombre, String info, int foto, int imagenDetalle, String descripcion, String urlInfo, String lugares, String urlMaps) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.nombre = nombre;
@@ -24,8 +28,10 @@ public class Actividad implements Serializable {
         this.foto = foto;
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
+        this.urlInfo = urlInfo;
+        this.lugares = lugares;
+        this.urlMaps = urlMaps;
     }
-
 
     public int getCodigo() {
         return codigo;
@@ -83,4 +89,27 @@ public class Actividad implements Serializable {
         this.descripcion = descripcion;
     }
 
+    public String getUrlInfo() {
+        return urlInfo;
+    }
+
+    public void setUrlInfo(String urlInfo) {
+        this.urlInfo = urlInfo;
+    }
+
+    public String getLugares() {
+        return lugares;
+    }
+
+    public void setLugares(String lugares) {
+        this.lugares = lugares;
+    }
+
+    public String getUrlMaps() {
+        return urlMaps;
+    }
+
+    public void setUrlMaps(String urlMaps) {
+        this.urlMaps = urlMaps;
+    }
 }

@@ -67,6 +67,9 @@ public class ActividadesFragment extends Fragment{
             actividad.setFoto(cursor.getInt(4));
             actividad.setImagenDetalle(cursor.getInt(5));
             actividad.setDescripcion(cursor.getString(6));
+            actividad.setUrlInfo(cursor.getString(7));
+            actividad.setLugares(cursor.getString(8));
+            actividad.setUrlMaps(cursor.getString(9));
             listaActividades.add(actividad);
         }
         recyclerActividad.setLayoutManager(new LinearLayoutManager(getContext()));
