@@ -45,6 +45,8 @@ public class AtilaBD {
     public static String FOTO_INFORMACION= "foto";
     public static String IMG_DETALLE_INFORMACION = "imageDetalle";
     public static String DESCRIPCION_INFORMACION = "descripcion";
+    public static String URLINFO_INFORMACION = "urlinfo";
+
 
     //CREAR TABLA ACTIVIDAD
     public static final  String CREAR_TABLA_ACTIVIDAD="CREATE TABLE" +
@@ -68,5 +70,5 @@ public class AtilaBD {
     public static final  String CREAR_TABLA_INFORMACION="CREATE TABLE" +
             " " + TABLA_INFORMACION + " (" +CODIGO_INFORMACION+" "+
             "INTEGER,"+ TIPO_INFORMACION + " "+" TEXT,"+ MUNICIPIO_INFORMACION+" " +" TEXT," +  NOMBRE_INFORMACION+" " +" TEXT,"
-            + FOTO_INFORMACION+" " +" INTEGER,"+IMG_DETALLE_INFORMACION+" "+ "INTEGER,"+DESCRIPCION_INFORMACION+" "+ "TEXT)";
+            + FOTO_INFORMACION+" " +" INTEGER,"+IMG_DETALLE_INFORMACION+" "+ "INTEGER,"+DESCRIPCION_INFORMACION+" "+ "TEXT,"+URLINFO_INFORMACION+" "+ "TEXT)";
 }

@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarArtesania(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,1);
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,2);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Artesania");
         //values.put(AtilaBD.INFO_ACTIVIDAD,"En Valledupar puede encontrar artesanías locales como mochilas arhuacas y kankuamas, esteras y collares.");
@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarParranda(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,2);
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,3);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Parranda Vallenata");
         //values.put(AtilaBD.INFO_ACTIVIDAD,"¡Viva una verdadera Parranda Vallenata en la tierra del vallenato!");
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarNadarRio(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,3);
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,4);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Bañarse en el Rio");
         //values.put(AtilaBD.INFO_ACTIVIDAD,"Valledupar cuenta con una riqueza hídrica que puede aprovechar para darse un refrescante chapuzón.");
@@ -360,7 +360,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarCityTour(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,3);
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,5);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Valledupar");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"City Tour");
         //values.put(AtilaBD.INFO_ACTIVIDAD,"Valledupar es reconocido por sus monumentos y glorietas, en homenaje a su historia y cultura. En la ciudad hay más de 20 monumentos y glorietas, la mayoría dedicados a la música y cultura tradicional vallenata.");
@@ -462,8 +462,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //----------------------------------------------------------------------------INFORMACION-------------------------------------------------------------------------------------///
 
-    public void guardarInformacion(){ guardarLeyendaSirena();
-        guardarMusica();}
+    public void guardarInformacion(){
+        guardarLeyendaVallenata();
+        guardarLeyendaSirena();
+        guardarMusica();
+    }
+
+    private void guardarLeyendaVallenata() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,1);
+        values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Leyenda Vallenata");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Dicen las crónicas que corría el año de 1576, cuando en casa del lusitano Antonio de Pereira se desarrolla una intriga sentimental de la esposa de éste. La india Francisca, bella y sensual, despierta celos en la esposa del portugués, que sospecha que entre ésta y aquel existen relaciones amorosas, no obstante ser ella casada con el indio Gregorio. Llevada de celos, la dama hispana, Ana de Peña, maltrata y azota a la india y en presencia del resto de la servidumbre le corta los cabellos, perpetrando de este modo grave ofensa y humillación a la nativa. Un indiecito tupe de nombre Antoñuelo, burlando la vigilancia, logra escapar y acude al cacique de los tupes, Coroponiaimo, informándole de este incidente. El Cacique monta en ira, comunica lo sucedido al resto de la tribu y convoca una reunión con participación de sus aliados, entre otros, el Cacique Coroniaimo, y allí, previas deliberaciones, se toman decisiones de ataque contra los españoles para vengar la ofensa.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://festivalvallenato.com/mito-leyenda/");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
 
     private void guardarLeyendaSirena() {
         SQLiteDatabase db = informacionSave.getWritableDatabase();
@@ -471,14 +490,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.CODIGO_INFORMACION,0);
         values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
-        values.put(AtilaBD.NOMBRE_INFORMACION,"Sirena del Rio Guatapuri");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Sirena de Hurtado");
         values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
         values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
-        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Este espacio es reservado para la informacion interna de la sirena");
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Cuentan los abuelos que Rosario Arciniegas, era una niña muy linda y caprichosa, nacida en el barrio «Cañaguate» de Valledupar. Acostumbrada a hacer siempre su voluntad, no hizo caso cuando sus padres, fieles a la tradición, le prohibieron que fuera a bañarse a las profundas aguas del pozo de Hurtado en el río Guatapurí, por ser un Jueves Santo, día consagrado a rememorar la Pasión de Nuestro Señor Jesucristo. Orgullosa y resuelta, Rosario se marchó a escondidas y al llegar al pozo, soltó sus largos cabellos, se quitó la ropa y se lanzó al agua desde las más altas rocas. Eran las dos de la tarde y, no obstante, el cielo se oscureció y cuando Rosario trató de salir de las aguas no pudo.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://festivalvallenato.com/mito-leyenda/");
 
         long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
+
+
 
     private void guardarMusica() {
         SQLiteDatabase db = informacionSave.getWritableDatabase();

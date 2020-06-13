@@ -11,11 +11,12 @@ public class Informacion implements Serializable {
     private int foto;
     private int imagenDetalle;
     private String descripcion;
+    private String link;
 
 
     public Informacion(){}
 
-    public Informacion(int codigo, String municipio, String tipo, String nombre, int foto, int imagenDetalle, String descripcion) {
+    public Informacion(int codigo, String municipio, String tipo, String nombre, int foto, int imagenDetalle, String descripcion, String link) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.tipo = tipo;
@@ -23,6 +24,7 @@ public class Informacion implements Serializable {
         this.foto = foto;
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
+        this.link = link;
     }
 
     public int getCodigo() {
@@ -57,7 +59,6 @@ public class Informacion implements Serializable {
         this.nombre = nombre;
     }
 
-
     public int getFoto() {
         return foto;
     }
@@ -80,5 +81,13 @@ public class Informacion implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }
