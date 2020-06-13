@@ -44,10 +44,8 @@ public class AdapterActividad extends RecyclerView.Adapter<AdapterActividad.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String nombres = model.get(position).getNombre();
-        String descripcion = model.get(position).getInfo();
         int imageid = model.get(position).getFoto();
         holder.nombres.setText(nombres);
-        holder.descripcion.setText(descripcion);
         holder.imagen.setImageResource(imageid);
     }
 
@@ -61,7 +59,7 @@ public class AdapterActividad extends RecyclerView.Adapter<AdapterActividad.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView nombres, descripcion, lugares;
+        TextView nombres;
         ImageView imagen;
 
 
@@ -69,7 +67,6 @@ public class AdapterActividad extends RecyclerView.Adapter<AdapterActividad.View
             super(itemView);
 
             nombres = itemView.findViewById(R.id.nombresA);
-            descripcion = itemView.findViewById(R.id.descripcionA);
             imagen = itemView.findViewById(R.id.imagen_actividad);
 
         }

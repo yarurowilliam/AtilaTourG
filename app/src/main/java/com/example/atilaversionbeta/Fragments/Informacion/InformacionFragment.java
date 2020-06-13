@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class InformacionFragment extends Fragment {
     RecyclerView recyclerInformacion;
     ArrayList<Informacion> listaInformacion;
     String tipoBusqueda;
-    ImageButton btnLeyenda,btnMusica;
+    Button btnLeyenda,btnMusica;
 
     Activity actividad;
     iComunicaFragments interfaceComunicaFragments;
@@ -45,8 +46,8 @@ public class InformacionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.informacion_fragment,container,false);
         try{
-            btnLeyenda = (ImageButton) view.findViewById(R.id.botonLeyendas);
-            btnMusica = (ImageButton) view.findViewById(R.id.botonMusica);
+            btnLeyenda = (Button) view.findViewById(R.id.botonLeyendas);
+            btnMusica = (Button) view.findViewById(R.id.botonMusica);
             admin = new ConexionSQLiteHelperInformacion(getContext(),"informacion",null,1);
             recyclerInformacion = view.findViewById(R.id.recyclerInformacion);
             btnLeyenda.setOnClickListener(new View.OnClickListener() {

@@ -6,7 +6,7 @@ public class Actividad implements Serializable {
     private int codigo;
     private String municipio;
     private String nombre;
-    private String info;
+    //private String info;
     private int foto;
     private int imagenDetalle;
     private String descripcion;
@@ -20,11 +20,10 @@ public class Actividad implements Serializable {
 
     }
 
-    public Actividad(int codigo, String municipio, String nombre, String info, int foto, int imagenDetalle, String descripcion, String urlInfo, String lugares, String urlMaps) {
+    public Actividad(int codigo, String municipio, String nombre, int foto, int imagenDetalle, String descripcion, String urlInfo, String lugares, String urlMaps) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.nombre = nombre;
-        this.info = info;
         this.foto = foto;
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
@@ -55,14 +54,6 @@ public class Actividad implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
     }
 
     public int getFoto() {

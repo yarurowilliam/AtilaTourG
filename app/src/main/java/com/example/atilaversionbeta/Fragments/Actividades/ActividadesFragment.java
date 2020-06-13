@@ -63,13 +63,12 @@ public class ActividadesFragment extends Fragment{
             actividad.setCodigo(cursor.getInt(0));
             actividad.setMunicipio(cursor.getString(1));
             actividad.setNombre(cursor.getString(2));
-            actividad.setInfo(cursor.getString(3));
-            actividad.setFoto(cursor.getInt(4));
-            actividad.setImagenDetalle(cursor.getInt(5));
-            actividad.setDescripcion(cursor.getString(6));
-            actividad.setUrlInfo(cursor.getString(7));
-            actividad.setLugares(cursor.getString(8));
-            actividad.setUrlMaps(cursor.getString(9));
+            actividad.setFoto(cursor.getInt(3));
+            actividad.setImagenDetalle(cursor.getInt(4));
+            actividad.setDescripcion(cursor.getString(5));
+            actividad.setUrlInfo(cursor.getString(6));
+            actividad.setLugares(cursor.getString(7));
+            actividad.setUrlMaps(cursor.getString(8));
             listaActividades.add(actividad);
         }
         recyclerActividad.setLayoutManager(new LinearLayoutManager(getContext()));
