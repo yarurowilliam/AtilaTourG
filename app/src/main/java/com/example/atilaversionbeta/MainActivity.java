@@ -465,13 +465,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarInformacion(){
         guardarLeyendaVallenata();
         guardarLeyendaSirena();
+        guardarLeyendaFrancisco();
+        guardarEcceHomo();
         guardarMusica();
     }
 
     private void guardarLeyendaVallenata() {
         SQLiteDatabase db = informacionSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_INFORMACION,1);
+        values.put(AtilaBD.CODIGO_INFORMACION,0);
         values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
         values.put(AtilaBD.NOMBRE_INFORMACION,"Leyenda Vallenata");
@@ -487,7 +489,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void guardarLeyendaSirena() {
         SQLiteDatabase db = informacionSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_INFORMACION,0);
+        values.put(AtilaBD.CODIGO_INFORMACION,1);
         values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
         values.put(AtilaBD.NOMBRE_INFORMACION,"Sirena de Hurtado");
@@ -500,6 +502,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    private void guardarLeyendaFrancisco() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,2);
+        values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Francisco El Hombre");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Narra la leyenda que una noche al regresar Francisco después de una parranda de varios días y al ir hacia su pueblo, para distraerse en la soledad de la noche, abrió el acordeón y, sobre su burro, como era usual en aquella época, empezó a interpretar sus melodías; de pronto, al terminar una pieza, surgió de inmediato el repertorio de otro acordeonero, que desafiante trataba de superarlo; de inmediato Francisco marchó hacia él hasta tenerlo a la vista; su competidor, para sorpresa, era Satanás, quien al instante se sentó sobre las raíces de un árbol, abrió su acordeón, y con las notas que le brotaban hizo apagar la luna y todas las estrellas.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://festivalvallenato.com/mito-leyenda/");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    private void guardarEcceHomo() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,3);
+        values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"El Ecce Homo");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "El Santo Patrono de la ciudad tiene tantos devotos como número de milagros a Él atribuidos. Numerosas personas, desde distintos sitios del país, e incluso del exterior, se desplazan a Valledupar a conmemorar el Lunes Santo, su día. El origen de la imagen que se venera en Valledupar se confunde en la Leyenda. No hay un registro histórico que certifique su procedencia.\n" +
+                "\n" +
+                "De Él se dice que apareció un día en la antigua Catedral, luego de que alguien que dijo ser artesano y ebanista ofreció regalar una imagen para adornar la iglesia, a cambio de que le dieran los materiales para trabajar. Por habérsele salvado de un accidente aéreo, Alfonso López Pumarejo de regaló al Ecce homo unas cadenas de oro y como en ocasión de una procesión de Semana Santa se las quitaron, él se puso pesado y solo lo pudieron sacar después de colocarle las cadenas nuevas de oro que López le había regalado. Solo así aligeró su peso y los devotos lo pudieron llevar en hombros nuevamente, como siempre.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://festivalvallenato.com/mito-leyenda/");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
 
 
     private void guardarMusica() {
