@@ -472,7 +472,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
         values.put(AtilaBD.NOMBRE_INFORMACION,"Sirena del Rio Guatapuri");
-        values.put(AtilaBD.INFO_INFORMACION,"Este espacio es reservado para la informacion de la leyenda de la Sirena");
         values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
         values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
         values.put(AtilaBD.DESCRIPCION_INFORMACION, "Este espacio es reservado para la informacion interna de la sirena");
@@ -488,7 +487,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_INFORMACION,"Musica");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Valledupar");
         values.put(AtilaBD.NOMBRE_INFORMACION,"Vallenato");
-        values.put(AtilaBD.INFO_INFORMACION,"La musica vallenata es el tipo de musica que mas se escucha en el municipioo");
         values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallecityicon);
         values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallecityicon);
         values.put(AtilaBD.DESCRIPCION_INFORMACION, "Este espacio es reservado para la informacion interna de la sirena");

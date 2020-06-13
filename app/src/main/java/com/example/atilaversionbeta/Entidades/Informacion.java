@@ -7,7 +7,7 @@ public class Informacion implements Serializable {
     private String municipio;
     private String tipo;
     private String nombre;
-    private String info;
+    //private String info;
     private int foto;
     private int imagenDetalle;
     private String descripcion;
@@ -15,12 +15,11 @@ public class Informacion implements Serializable {
 
     public Informacion(){}
 
-    public Informacion(int codigo, String municipio, String tipo, String nombre, String info, int foto, int imagenDetalle, String descripcion) {
+    public Informacion(int codigo, String municipio, String tipo, String nombre, int foto, int imagenDetalle, String descripcion) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.tipo = tipo;
         this.nombre = nombre;
-        this.info = info;
         this.foto = foto;
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
@@ -58,13 +57,6 @@ public class Informacion implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
 
     public int getFoto() {
         return foto;

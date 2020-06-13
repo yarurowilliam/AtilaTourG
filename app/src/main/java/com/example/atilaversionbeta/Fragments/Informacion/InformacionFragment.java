@@ -105,10 +105,9 @@ public class InformacionFragment extends Fragment {
             informacion.setTipo(cursor.getString(1));
             informacion.setMunicipio(cursor.getString(2));
             informacion.setNombre(cursor.getString(3));
-            informacion.setInfo(cursor.getString(4));
-            informacion.setFoto(cursor.getInt(5));
-            informacion.setImagenDetalle(cursor.getInt(6));
-            informacion.setDescripcion(cursor.getString(7));
+            informacion.setFoto(cursor.getInt(4));
+            informacion.setImagenDetalle(cursor.getInt(5));
+            informacion.setDescripcion(cursor.getString(6));
             listaInformacion.add(informacion);
         }
         recyclerInformacion.setLayoutManager(new LinearLayoutManager(getContext()));
