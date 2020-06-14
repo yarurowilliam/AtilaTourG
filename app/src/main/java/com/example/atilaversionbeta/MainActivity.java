@@ -267,6 +267,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarCityTour();
     }
 
+    //VALLEDUPAR
+
     public void guardarCiclomonta(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
@@ -380,7 +382,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
+    //MANAURE
 
     public void guardarParapente(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
@@ -404,6 +406,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void restaurantesSitios(){
         guardarRestauranteMontaCarga();
+        guardarRestauranteCafe();
+        guardarRestauranteCompae();
+        guardarRestauranteGokela();
     }
 
     public void guardarRestauranteMontaCarga(){
@@ -415,7 +420,60 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.NOMBRE_SITIO,"Montacarga del sur");
         values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
         values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
-        values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Este restaurante es uno de los mas conocidos de la ciudad por su comida tipica y asados\n\n Teléfono: 316 7528373\n\nDirección: Avenida Salguero,Frente de Postobon");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/search?client=opera-gx&hs=QuJ&ei=J2_lXpXcOISvggeIprfwBA&q=Restaurante+monta+carga+del+sur+n1&oq=Restaurante+monta+carga+del+sur+n1&gs_lcp=CgZwc3ktYWIQAzIICCEQFhAdEB46BAgAEEdQoKMEWNemBGDIpwRoAHABeACAAdQBiAGNA5IBBTAuMS4xmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjVi-yahoDqAhWEl-AKHQjTDU4Q4dUDCAs&uact=5");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Monta+Carga+N°+1/@10.4674561,-73.270904,14z/data=!4m8!1m2!2m1!1sRestaurante+monta+carga+del+sur+n1!3m4!1s0x8e8ab98fc1c00843:0xf7f9e50a3acb4f0c!8m2!3d10.447974!4d-73.2427168");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarRestauranteCafe(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"ArteSano Natural Cafe");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Este restaurante es uno de los mas conocidos de la ciudad por su comida, ademas es recomendado por la secretaria de Turismo del municipio de Valledupar\n\n Teléfono: 304 5085827\n\nDirección: Calle 13 # 6-81");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.facebook.com/artesanorestaurantenatural/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/ArteSano+Natural+Cafe+Restaurante/@10.4808174,-73.2506712,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9b4bf6612db:0x39044500ecf59b34!8m2!3d10.4808174!4d-73.2484825");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarRestauranteCompae(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Bar Restaurante Compae Chipuco");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Compae chipuco es un acogedor restaurante fundado en 28 de Enero 2006, al estilo de un patio típico del Valle del cacique Upar,  decorado al estilo colonial, la tradición vive en cada rincón, objeto, pintura y detalles que enriquecen nuestro bagaje cultural donde podrá apreciar la calidad y el toque especial de los sabores de Valledupar y sus alrededores.\n\n Teléfono: (5) 5805635\n\nDirección: Cra. 6 #No. 16-24");
+        values.put(AtilaBD.URLINFO_SITIO, "http://www.compaechipucorestobar.com");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Bar+Restaurante+Compae+Chipuco/@10.4767824,-73.246602,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9b3d19ade1f:0xa0ba49b9acb10074!8m2!3d10.4767824!4d-73.2444133");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarRestauranteGokela(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Gokéla");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Si comer alimentos saludables y a la vez deliciosos, en un ambiente sofisticado mientras escuchas el sonido relajante de Bossa Nova es tu estilo, entonces bienvenido a Gokela! Fundado en Cartagena, Colombia en el año 2012, la franquicia Gokela ha experimentado un crecimiento explosivo debido a su propuesta gastronómica única y la gran selección de ingredientes frescos y saludables a la disposición de sus clientes que saben que escoger a la hora de cuidar su salud y bienestar. Seguimos la metodología ‘fast casual’: un servicio de comida rápida a un precio razonable – uno híbrido entre un restaurante tradicional y uno de comida rápida. .\n\n Teléfono: 323 4559492\n\nDirección: Cra. 9 ##7b- 39");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.gokela.com");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Gokéla/@10.4851959,-73.2581529,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab83500d25eb1:0xcd8d5ff91984779e!8m2!3d10.4851959!4d-73.2559642");
 
         long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
