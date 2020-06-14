@@ -50,8 +50,8 @@ public class SitiosFragment extends Fragment {
         btnHotel = (Button) view.findViewById(R.id.botonHotel);
         btnBares = (Button) view.findViewById(R.id.botonBares);
         btnParques = (Button) view.findViewById(R.id.botonParques);
-        btnTiendas = (Button) view.findViewById(R.id.botonTiendas);
-        btnRecreacion = (Button) view.findViewById(R.id.botonRecreacion);
+        btnTiendas = (Button) view.findViewById(R.id.botonEmergencias);
+        btnRecreacion = (Button) view.findViewById(R.id.botonMonumentos);
 
         try{
             admin = new ConexionSQLiteHelperSitio(getContext(),"sitios",null,1);
@@ -84,22 +84,22 @@ public class SitiosFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     tipoBusqueda = "Parques";
-                    Toast.makeText(getContext(), "Seleccionó bares", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Seleccionó parques", Toast.LENGTH_SHORT).show();
                     consultarLista();
                 }
             });
             btnTiendas.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    tipoBusqueda = "Tiendas";
-                    Toast.makeText(getContext(), "Seleccionó tiendas", Toast.LENGTH_SHORT).show();
+                    tipoBusqueda = "Emergencias";
+                    Toast.makeText(getContext(), "Seleccionó emergencias", Toast.LENGTH_SHORT).show();
                     consultarLista();
                 }
             });
             btnRecreacion.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    tipoBusqueda = "Recreacion";
+                    tipoBusqueda = "Monumentos";
                     Toast.makeText(getContext(), "Seleccionó recreacion", Toast.LENGTH_SHORT).show();
                     consultarLista();
                 }

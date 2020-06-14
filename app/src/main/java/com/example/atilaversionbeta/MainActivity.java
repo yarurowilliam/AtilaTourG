@@ -403,6 +403,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         restaurantesSitios();
         hotelesSitios();
         baresSitios();
+        parquesSitios();
+        emergenciasSitios();
     }
 
     public void restaurantesSitios(){
@@ -588,6 +590,123 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.DESCRIPCION_SITIO, "Dos experiencias diferentes, un sólo lugar. \nTeléfono: 311 2093564\nDirección: Carrera 9 # 10-88");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.facebook.com/lapremierevalledupar/");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/La+Premiere/@10.4809375,-73.2538753,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9b540fc079f:0x56c7d21ba31a557e!8m2!3d10.4809375!4d-73.2516866");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void parquesSitios(){
+        guardarParqueProvincia();
+    }
+
+    public void guardarParqueProvincia(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Parques");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Parque la provincia");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Un parque turístico, cultural y ecológico, con una extensión de 3.3 hectáreas, ubicado a pocos metros del río Guatapurí, de la glorieta Los Juglares y del Parque de la Leyenda Vallenata. es entregado a Valledupar, Colombia y el mundo por parte del alcalde Augusto Daniel Ramírez Uhía. Lugar con el que se le rinde un homenaje al Magdalena Grande y entre sus atractivos cuenta con una escultura a escala humana del músico Carlos Vives.\n" +
+                "\n" +
+                "Este escenario cuenta con figuras en piedras, alusivas a animales propios de la región; juegos didácticos, senderos en losetas, jardines secos y verdes, sistema de riego, ciclo-ruta, locales comerciales, bancas antivandálicas, canecas de basura, zonas de parqueo, espejo de agua, gimnasio biosaludable, cancha sintética y máquinas de diversión para personas con movilidad reducida. En el Parque de La Provincia también funciona una fuente interactiva y una seca, contemplativa con la frase: Valledupar la más linda.\nDirección: Antiguo parque del helado");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/search?client=opera-gx&q=parque+la+provincia&sourceid=opera&ie=UTF-8&oe=UTF-8");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=parque+la+provincia&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjh7ZmjloDqAhUqn-AKHQmHDoYQ_AUoAnoECBYQBA");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    private void emergenciasSitios(){
+        guardarPolicia();
+        guardarBomberos();
+        guardarHospitalRosario();
+        guardarHospitalEduardo();
+    }
+
+    public void guardarPolicia(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Emergencias");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Comando de Policia Nacional");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "DIRECCIÓN: \n" +
+                "Carrera 7 # 23-96 12 de Octubre\n" +
+                "HORARIOS: \n" +
+                "lunes a domingo de 07:00 am a 12:00 m y de 02:30 pm a 07:00 pm\n" +
+                "TELÉFONOS: \n" +
+                "3503403116\n" +
+                "123\n" +
+                "CORREOS: \n" +
+                "deces.oac@policia.gov.co\n" +
+                "TWITTER: \n" +
+                "@PolicíaDeCesar");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.policia.gov.co/cesar");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Departamento+de+Policia+Cesar/@10.4502702,-73.2734849,14z/data=!4m8!1m2!2m1!1scomando+de+policia+valledupar!3m4!1s0x8e8ab9bd6dcb0723:0x8bf003ebf61b6307!8m2!3d10.4605845!4d-73.243393");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarBomberos(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Emergencias");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Estación de Bomberos");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "\nDirección: Calle 16 # 19-85\n");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.facebook.com/Sinaltrabombeross/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Bomberos+valledupar&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiQw5SroIDqAhWidt8KHV3SCUsQ_AUoAnoECBcQBA");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarHospitalRosario(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Emergencias");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Hospital Rosario Pumarejo De López");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: (5) 5712339\nDirección: Calle 16C No. 17 - 141");
+        values.put(AtilaBD.URLINFO_SITIO, "https://hrplopez.gov.co/sitio/index.php/es/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Hospital+Rosario+Pumarejo+De+López/@10.46909,-73.2634847,15z/data=!4m8!1m2!2m1!1shospital+valledupar!3m4!1s0x8e8ab9c7a3e5869f:0xc6ffb7f998a20023!8m2!3d10.46909!4d-73.25473");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+
+    public void guardarHospitalEduardo(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Emergencias");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Hospital Eduardo Arredondo Daza");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: (5) 5842828\nDirección: Cl. 39 #21-38");
+        values.put(AtilaBD.URLINFO_SITIO, "http://www.headese.gov.co");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Hospital+Eduardo+Arredondo+Daza/@10.4503125,-73.264773,15z/data=!4m8!1m2!2m1!1shospital+valledupar!3m4!1s0x8e8ab98dace038bf:0x56bfe9fd4d753dfe!8m2!3d10.4465548!4d-73.2474585");
 
 
 
