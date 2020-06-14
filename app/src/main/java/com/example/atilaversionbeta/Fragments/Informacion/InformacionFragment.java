@@ -71,7 +71,7 @@ public class InformacionFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     tipoBusqueda = "Juglares";
-                    Toast.makeText(getContext(), "Seleccionó los juglares!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Seleccionó los juglares !", Toast.LENGTH_SHORT).show();
                     consultarInformacion();
                 }
             });
