@@ -150,10 +150,11 @@ public class SitiosFragment extends Fragment {
             sitio.setTipo(cursor.getString(1));
             sitio.setMunicipio(cursor.getString(2));
             sitio.setNombre(cursor.getString(3));
-            sitio.setInfo(cursor.getString(4));
-            sitio.setFoto(cursor.getInt(5));
-            sitio.setImagenDetalle(cursor.getInt(6));
-            sitio.setDescripcion(cursor.getString(7));
+            sitio.setFoto(cursor.getInt(4));
+            sitio.setImagenDetalle(cursor.getInt(5));
+            sitio.setDescripcion(cursor.getString(6));
+            sitio.setLinkUrl(cursor.getString(7));
+            sitio.setLinkMaps(cursor.getString(8));
             listaSitios.add(sitio);
         }
         recyclerSitio.setLayoutManager(new LinearLayoutManager(getContext()));

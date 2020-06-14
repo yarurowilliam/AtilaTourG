@@ -413,7 +413,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Montacarga del sur");
-        values.put(AtilaBD.INFO_SITIO,"Este espacio es reservado para la informacion del restaurante");
         values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
         values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");
@@ -431,7 +430,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Hilton");
-        values.put(AtilaBD.INFO_SITIO,"Este espacio es reservado para la informacion del hotel");
         values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
         values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");

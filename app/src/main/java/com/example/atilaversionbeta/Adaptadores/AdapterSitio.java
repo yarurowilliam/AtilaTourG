@@ -39,10 +39,8 @@ public class AdapterSitio extends RecyclerView.Adapter<AdapterSitio.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String nombres = model.get(position).getNombre();
-        String descripcion = model.get(position).getInfo();
         int imageid = model.get(position).getFoto();
         holder.nombres.setText(nombres);
-        holder.descripcion.setText(descripcion);
         holder.imagen.setImageResource(imageid);
     }
 
@@ -64,13 +62,12 @@ public class AdapterSitio extends RecyclerView.Adapter<AdapterSitio.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nombres, descripcion;
+        TextView nombres;
         ImageView imagen;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nombres = itemView.findViewById(R.id.nombresS);
-            descripcion = itemView.findViewById(R.id.descripcionS);
             imagen = itemView.findViewById(R.id.imagen_sitio);
         }
     }

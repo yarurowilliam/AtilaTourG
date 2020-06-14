@@ -32,10 +32,12 @@ public class AtilaBD {
     public static String TIPO_SITIO = "tipo";
     public static String MUNICIPIO_SITIO = "municipio";
     public static String NOMBRE_SITIO = "nombre";
-    public static String INFO_SITIO = "info";
     public static String FOTO_SITIO= "foto";
     public static String IMG_DETALLE_SITIO = "imageDetalle";
     public static String DESCRIPCION_SITIO = "descripcion";
+    public static String URLINFO_SITIO = "urlinfo";
+    public static String URLMAPS_SITIO = "urlmaps";
+
 
     //CONTRACT INFORMACION
     public static String TABLA_INFORMACION = "informacion";
@@ -64,8 +66,8 @@ public class AtilaBD {
     //CREAR TABLA SITIO
     public static final  String CREAR_TABLA_SITIO="CREATE TABLE" +
             " " + TABLA_SITIO + " (" +CODIGO_SITIO+" "+
-            "INTEGER,"+ TIPO_SITIO + " "+" TEXT,"+ MUNICIPIO_SITIO+" " +" TEXT," +  NOMBRE_SITIO+" " +" TEXT,"+ INFO_SITIO+" " +" TEXT,"
-            + FOTO_SITIO+" " +" INTEGER,"+IMG_DETALLE_SITIO+" "+ "INTEGER,"+DESCRIPCION_SITIO+" "+ "TEXT)";
+            "INTEGER,"+ TIPO_SITIO + " "+" TEXT,"+ MUNICIPIO_SITIO+" " +" TEXT," +  NOMBRE_SITIO+" " +" TEXT,"
+            + FOTO_SITIO+" " +" INTEGER,"+IMG_DETALLE_SITIO+" "+ "INTEGER,"+DESCRIPCION_SITIO+" "+ "TEXT,"+URLINFO_SITIO+" "+ "TEXT,"+URLMAPS_SITIO+" "+ "TEXT)";
 
     //CREAR TABLA INFORMACION
     public static final  String CREAR_TABLA_INFORMACION="CREATE TABLE" +

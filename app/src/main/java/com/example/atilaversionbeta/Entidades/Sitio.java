@@ -7,23 +7,24 @@ public class Sitio implements Serializable {
     private String municipio;
     private String tipo;
     private String nombre;
-    private String info;
     private int foto;
     private int imagenDetalle;
     private String descripcion;
+    private String linkUrl;
+    private String linkMaps;
 
     public Sitio(){}
 
-
-    public Sitio(int codigo, String municipio, String tipo, String nombre, String info, int foto, int imagenDetalle, String descripcion) {
+    public Sitio(int codigo, String municipio, String tipo, String nombre, int foto, int imagenDetalle, String descripcion, String linkUrl, String linkMaps) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.tipo = tipo;
         this.nombre = nombre;
-        this.info = info;
         this.foto = foto;
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
+        this.linkUrl = linkUrl;
+        this.linkMaps = linkMaps;
     }
 
     public int getCodigo() {
@@ -58,14 +59,6 @@ public class Sitio implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
     public int getFoto() {
         return foto;
     }
@@ -88,5 +81,21 @@ public class Sitio implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getLinkUrl() {
+        return linkUrl;
+    }
+
+    public void setLinkUrl(String linkUrl) {
+        this.linkUrl = linkUrl;
+    }
+
+    public String getLinkMaps() {
+        return linkMaps;
+    }
+
+    public void setLinkMaps(String linkMaps) {
+        this.linkMaps = linkMaps;
     }
 }
