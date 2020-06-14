@@ -21,7 +21,12 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment,container,false);
         textoBuscado = view.findViewById(R.id.municipioBuscado);
-        textoBuscado.setText(municipioBuscado);
+        if(municipioBuscado.equals("Valledupar")){
+            textoBuscado.setText("Navegando por el valle mi vale");
+        }else if(municipioBuscado.equals("Manaure")){
+            textoBuscado.setText("Navegando por manaure mi vale");
+        }
+
         return view;
     }
 }
