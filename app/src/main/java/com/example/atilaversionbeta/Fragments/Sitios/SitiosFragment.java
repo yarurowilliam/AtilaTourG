@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 
 public class SitiosFragment extends Fragment {
 
-    ImageButton btnRestaurante,btnHotel;
+    Button btnRestaurante,btnHotel,btnBares,btnParques,btnTiendas,btnRecreacion;
     String municipioBuscado = MainActivity.municipioBuscado;
     String tipoBusqueda;
     ConexionSQLiteHelperSitio admin;
@@ -45,8 +46,13 @@ public class SitiosFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sitios_fragment,container,false);
-        btnRestaurante = (ImageButton) view.findViewById(R.id.botonRestaurante);
-        btnHotel = (ImageButton) view.findViewById(R.id.botonHotel);
+        btnRestaurante = (Button) view.findViewById(R.id.botonRestaurante);
+        btnHotel = (Button) view.findViewById(R.id.botonHotel);
+        btnBares = (Button) view.findViewById(R.id.botonBares);
+        btnParques = (Button) view.findViewById(R.id.botonParques);
+        btnTiendas = (Button) view.findViewById(R.id.botonTiendas);
+        btnRecreacion = (Button) view.findViewById(R.id.botonRecreacion);
+
         try{
             admin = new ConexionSQLiteHelperSitio(getContext(),"sitios",null,1);
             recyclerSitio = view.findViewById(R.id.recyclerSitios);
@@ -54,7 +60,7 @@ public class SitiosFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     tipoBusqueda = "Restaurante";
-                    Toast.makeText(getContext(), "RESTAURANTES EN VALLEDUPAR HPTA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Seleccionó restaurantes", Toast.LENGTH_SHORT).show();
                     consultarLista();
                 }
             });
@@ -62,7 +68,39 @@ public class SitiosFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     tipoBusqueda = "Hotel";
-                    Toast.makeText(getContext(), "HOTELES EN VALLEDUPAR HPTA", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Seleccionó hoteles", Toast.LENGTH_SHORT).show();
+                    consultarLista();
+                }
+            });
+            btnBares.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Bares";
+                    Toast.makeText(getContext(), "Seleccionó bares", Toast.LENGTH_SHORT).show();
+                    consultarLista();
+                }
+            });
+            btnParques.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Parques";
+                    Toast.makeText(getContext(), "Seleccionó bares", Toast.LENGTH_SHORT).show();
+                    consultarLista();
+                }
+            });
+            btnTiendas.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Tiendas";
+                    Toast.makeText(getContext(), "Seleccionó tiendas", Toast.LENGTH_SHORT).show();
+                    consultarLista();
+                }
+            });
+            btnRecreacion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tipoBusqueda = "Recreacion";
+                    Toast.makeText(getContext(), "Seleccionó recreacion", Toast.LENGTH_SHORT).show();
                     consultarLista();
                 }
             });
