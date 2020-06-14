@@ -541,8 +541,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Brasa Manaurera Restaurante");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.brasamanaure);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.brasadesc);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Dirección: Cl. 2 #6-15\n" +
                 "Teléfono: 312 6686072");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Brasa+Manaurera+Restaurante&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwi8yYLAnILqAhXLg-AKHZOhBcgQ_AUoAXoECBsQAw");
@@ -559,8 +559,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Estadero Edubeye");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.edubeye);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.edubeyedesc);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Dirección: Cra. 9 #2-95\n" +
                 "Horario: \n" +
                 "domingo\t09:00a17:00\n" +
@@ -666,8 +666,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Centro Recreacional Los Kioscos");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.kioskomanaure);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.kioskosmanauredesc);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Las reservas actualmente estan canceladas motivo del COVID-19\nTeléfono: 310 3522744\n\nDirección:  Cl. 2 #1-16");
         values.put(AtilaBD.URLINFO_SITIO, "http://www.comfacesar.com/");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Centro+Recreacional+Los+Kioscos/@10.3937348,-73.0224585,17z/data=!3m1!4b1!4m8!3m7!1s0x8e8a96e8820654d9:0x65a15f364eae0e66!5m2!4m1!1i2!8m2!3d10.3937348!4d-73.0202698");
@@ -683,8 +683,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Finca Hostal La Danta");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.fincamanaure);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.fincaladantadesc);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Las reservas actualmente estan canceladas motivo del COVID-19\nTeléfono: 313 5982933\n\nDirección:  Río, Manaure, Cesar");
         values.put(AtilaBD.URLINFO_SITIO, "https://finca-hostal-la-danta.negocio.site");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Finca+Hostal+La+Danta/@10.38792,-73.0271152,17z/data=!3m1!4b1!4m8!3m7!1s0x8e8a96e38fdce3db:0x25e515afc5f911af!5m2!4m1!1i2!8m2!3d10.38792!4d-73.0249265");
@@ -747,8 +747,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Bares");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Estanco y comida El viejo sola");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.discomanaure1);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.discomanaure);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Los servicios estan cancelados motivo del COVID-19\nTeléfono: No disponible\n\nDirección:  Cra. 8 #2-30");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Estanco+y+comida+El+viejo+sola/@10.3882046,-73.0311399,16.47z/data=!4m13!1m7!3m6!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!2sEstanco+y+comida+El+viejo+sola!8m2!3d10.3891125!4d-73.0293189!10e1!3m4!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!8m2!3d10.3891125!4d-73.0293189");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Estanco+y+comida+El+viejo+sola/@10.3882046,-73.0311399,16.47z/data=!4m13!1m7!3m6!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!2sEstanco+y+comida+El+viejo+sola!8m2!3d10.3891125!4d-73.0293189!10e1!3m4!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!8m2!3d10.3891125!4d-73.0293189");
@@ -792,8 +792,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Parques");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Plaza Simon Bolivar");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.manaureplaza);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.plazamanaure);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: No disponible\n\nDirección:  Cl. 2f #6104 #6-2 a");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
@@ -905,8 +905,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Emergencias");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Hospital Jose Antonio Socarras");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.hospitalmanaure);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.hospitaldescman);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: (5) 5790313\n\nDirección:  Cra. 6 #3-1");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.hjasocarras.gov.co");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Hospital+Jose+Antonio+Socarras/@10.391981,-73.029224,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8a96e519c98d1d:0xf0307ea35eaf041b!8m2!3d10.391981!4d-73.0270353");
@@ -1113,8 +1113,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Atracciones");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Río Manaure");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.riomanaure);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.riomanauredesc);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Manaure Cesar");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Río+Manaure/@10.3881884,-73.0277368,17.29z/data=!4m5!3m4!1s0x8e8a96e3320ea217:0xcc7965bb4e1b4d75!8m2!3d10.3871407!4d-73.026805");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Río+Manaure/@10.3881884,-73.0277368,17.29z/data=!4m5!3m4!1s0x8e8a96e3320ea217:0xcc7965bb4e1b4d75!8m2!3d10.3871407!4d-73.026805");
@@ -1130,8 +1130,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_SITIO,"Atracciones");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
         values.put(AtilaBD.NOMBRE_SITIO,"Plaza Simon Bolivar");
-        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
-        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.manaureplaza);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.plazamanaure);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: No disponible\n\nDirección:  Cl. 2f #6104 #6-2 a");
         values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
         values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
@@ -1183,8 +1183,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.CODIGO_EVENTO,2);
         values.put(AtilaBD.MUNICIPIO_EVENTO,"Manaure");
         values.put(AtilaBD.NOMBRE_EVENTO,"Fiestas de la Virgen del Carmen");
-        values.put(AtilaBD.FOTO_EVENTO, R.drawable.festivaldelaquinta);
-        values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.festivalquintadescrip);
+        values.put(AtilaBD.FOTO_EVENTO, R.drawable.fiestaspatronales);
+        values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.fiestaspatronalesdesc);
         values.put(AtilaBD.DESCRIPCION_EVENTO, "Las fiestas de la Virgen del Carmen, patrona del municipio se celebran los días 14 al 16 de julio con una programación que incluye alboradas musicales, misa de 6, misa de 8 y misa mayor a las 10 a.m, procesión de vehículos los días 15 y 16, procesión del pueblo, quema de castillos, vaca locas, actividades culturales, deportivas y folclóricas. Manaure Es uno de los municipios más frecuentados en época de fiesta en toda la región.\n" +
                 "\n" +
                 "Los responsables de la coordinación del evento es la Congregación de la Virgen del Carmen.");
@@ -1320,8 +1320,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
         values.put(AtilaBD.MUNICIPIO_INFORMACION,"Manaure");
         values.put(AtilaBD.NOMBRE_INFORMACION,"El Origen de Manaure");
-        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallenato);
-        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallenatodescrip);
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.leyendamanaure);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.plazamanaure);
         values.put(AtilaBD.DESCRIPCION_INFORMACION, "Hay dos versiones de por qué el municipio se llama así. La primera versión dice que se debe a que un ganadero del municipio de La Paz extravió una vaca, y al ir a buscarla la encontró en esta sabana. La ubre de la vaca estaba hinchada y de ella manaba leche. Él hizo un gesto de admiración exclamando que en estos pastizales a las vacas les mana la ubre, de esta manera nació el nombre de nuestro municipio. Manaure, que inicialmente fue bautizado como sabana donde mana la ubre, y luego por convergencia de lenguaje se unificó el término a Manaure. La segunda versión cuenta que estas tierras eran habitadas por los indios bobures o boredes descendientes de los caribes, oriundos de Venezuela, cuyo cacique se llamaba Manaure, cuando migraron hacia otros lugares, esta sabana adoptó su nombre.\n" +
                 "\n" +
                 "Para la primera década del siglo XX esta sabana empezó a ser habitada y se convirtió en corregimiento del municipio de La Paz en 1913. Fue erigido municipio en 1980..");
