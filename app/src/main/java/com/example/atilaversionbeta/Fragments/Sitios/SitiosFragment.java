@@ -99,8 +99,8 @@ public class SitiosFragment extends Fragment {
             btnRecreacion.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    tipoBusqueda = "Monumentos";
-                    Toast.makeText(getContext(), "Seleccionó recreacion", Toast.LENGTH_SHORT).show();
+                    tipoBusqueda = "Atracciones";
+                    Toast.makeText(getContext(), "Seleccionó atracciones", Toast.LENGTH_SHORT).show();
                     consultarLista();
                 }
             });

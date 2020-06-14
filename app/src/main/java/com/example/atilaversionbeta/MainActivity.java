@@ -405,6 +405,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         baresSitios();
         parquesSitios();
         emergenciasSitios();
+        monumentosSitios();
     }
 
     public void restaurantesSitios(){
@@ -434,7 +435,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarRestauranteCafe(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,1);
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"ArteSano Natural Cafe");
@@ -451,7 +452,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarRestauranteCompae(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,2);
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Compae Chipuco");
@@ -468,7 +469,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarRestauranteGokela(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,3);
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Gokéla");
@@ -491,7 +492,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarHotelHilton(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,4);
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Hampton by Hilton Valledupar");
@@ -513,7 +514,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarHotelSonesta(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,5);
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Sonesta Hotel Valledupar");
@@ -532,7 +533,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarHotelCasa(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,6);
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Casa de Los Santos Reyes Hotel Boutique");
@@ -562,7 +563,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarWinners(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,7);
         values.put(AtilaBD.TIPO_SITIO,"Bares");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Winners Sport Bar");
@@ -581,7 +582,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarPremiere(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,8);
         values.put(AtilaBD.TIPO_SITIO,"Bares");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"La Premiere");
@@ -604,7 +605,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarParqueProvincia(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,9);
         values.put(AtilaBD.TIPO_SITIO,"Parques");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Parque la provincia");
@@ -632,7 +633,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarPolicia(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,10);
         values.put(AtilaBD.TIPO_SITIO,"Emergencias");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Comando de Policia Nacional");
@@ -659,7 +660,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarBomberos(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,11);
         values.put(AtilaBD.TIPO_SITIO,"Emergencias");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Estación de Bomberos");
@@ -678,7 +679,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarHospitalRosario(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,12);
         values.put(AtilaBD.TIPO_SITIO,"Emergencias");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Hospital Rosario Pumarejo De López");
@@ -698,7 +699,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarHospitalEduardo(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.CODIGO_SITIO,13);
         values.put(AtilaBD.TIPO_SITIO,"Emergencias");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
         values.put(AtilaBD.NOMBRE_SITIO,"Hospital Eduardo Arredondo Daza");
@@ -714,8 +715,190 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    public void monumentosSitios(){
+        guardarPlaza();
+        guardarRio();
+        guardarGlorietaAcordion();
+        guardarGlorietaJuglares();
+        guardarLosPoporos();
+        guardarMuseoAcordeon();
+        guardarPilonera();
+        guardarParqueLeyenda();
+        guardarObelisco();
+    }
+
+    public void guardarPlaza(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,14);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Plaza Alfonso López");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Ubicada en el corazón de la ciudad, en cuyo centro se levanta un frondoso árbol de mango convertido en símbolo de identidad de la plaza. Allí está la emblemática tarima Francisco el Hombre, que sirve de escenario a los principales certámenes que realizan en Valledupar. Está enmarcada por un conjunto de casas de arquitectura colonial muy bien conservadas, de la iglesia de la Concepción y la sede del gobierno local. La Iglesia de La Inmaculada Concepción, ubicada en la Plaza Alfonso López de Valledupar, fue construida en el siglo XVII y recientemente restaurada con el apoyo del Ministerio de la Cultura.\nDirección: Carrera 7");
+        values.put(AtilaBD.URLINFO_SITIO, "https://es.wikipedia.org/wiki/Plaza_Alfonso_López_de_Valledupar");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Plaza+Alfonso+López+de+Valledupar/@10.4775904,-73.2467264,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9b3ca245405:0x7792b2f1f2d255d7!8m2!3d10.4775904!4d-73.2445377");
 
 
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarRio(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,15);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Río Guatapurí");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Nace en la laguna Curigua, de la Sierra Nevada de Santa Marta, y en un vertiginoso descenso de 80 kilómetros entrega sus aguas a Valledupar. Su balneario Hurtado, de cristalinas aguas, genera un ambiente refrescante donde los turistas pueden bañarse; sus contorneadas rocas enmarcan paisajes que han contribuido a crear misteriosas leyendas y son fuente de inspiración de melodías del folclor vallenato.");
+        values.put(AtilaBD.URLINFO_SITIO, "https://es.wikipedia.org/wiki/Río_Guatapurí");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Rio+guatapuri&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjXm8TWpIDqAhVjT98KHR1ABaAQ_AUoAnoECBgQBA");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarGlorietaAcordion(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,16);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Mi Pedazo de Acordeón");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "El Monumento Mi Pedazo de Acordeón rinde homenaje a Alejo Durán, primer Rey Vallenato y al principal instrumento e la música vallenata..");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Mi+Pedazo+de+Acordeón&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjZ39qLpYDqAhWKm-AKHdX4AWQQ_AUoBHoECBgQBg");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Mi+Pedazo+de+Acordeón&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjZ39qLpYDqAhWKm-AKHdX4AWQQ_AUoBHoECBgQBg");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+
+    public void guardarGlorietaJuglares(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,17);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Glorieta Los Juglares");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Ubicada en el Balneario Hurtado, a orillas del Río Guatapurí, podrá visitar este sitio turístico que exalta y rinde homenaje a algunos de los más grandes representantes de la música vallenata, como Leandro Díaz, Lorenzo Morales, Rafael Escalona, Emiliano Zuleta Baquero, Diomedes Díaz, Poncho Zuleta, Jorge Oñate y Martín Elías.");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Glorieta+de+Los+Juglares/@10.5004141,-73.2701535,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab8239ee7fa71:0x8d1c30ad5c5c3b76!8m2!3d10.5004141!4d-73.2679648");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Glorieta+de+Los+Juglares/@10.5004141,-73.2701535,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab8239ee7fa71:0x8d1c30ad5c5c3b76!8m2!3d10.5004141!4d-73.2679648");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarLosPoporos(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,18);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Monumento Los Poporos");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Monumento del maestro Jorge Maestre, en homenaje a las etnias indígenas que habitan nuestra Sierra Nevada, los hermanos mayores, arhuacos, koguis y wiwas. En este instrumento ellos conservan el hayo (hoja de coca), la cual muelen y consumen como un ritual diario, para conservar las energías en sus largas jornadas de esfuerzo físico.\n" +
+                "\n" +
+                "El poporo simboliza la madurez del hombre indígena, ya que solo lo poseen cuando llegan a la edad adulta.\n" +
+                "\n" +
+                "El monumento se encuentra ubicado continuo al Coliseo Cubierto Julio Monsalvo.");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Los+Poporos/@10.4744578,-73.2650692,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9cfb368129b:0x417eb6a079b49659!8m2!3d10.4744578!4d-73.2628805");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Los+Poporos/@10.4744578,-73.2650692,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9cfb368129b:0x417eb6a079b49659!8m2!3d10.4744578!4d-73.2628805");
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarMuseoAcordeon(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,19);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Museo del Acordeón");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "La casa Museo del Acordeón ofrece un recorrido guiado en el que se cuenta la historia del principal instrumento musical que le da vida a la música vallenata y se muestra las piezas que alberga el museo. El ingreso al museo tiene un costo/donación de $ 20.000, para el mantenimiento y preservación del recinto. Es necesario llamar para reservar el cupo/ingreso al museo.");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Museo+del+Acordeón/@10.4788788,-73.2619963,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9cc71d8a0c3:0x2e8ca7aa7c557f40!8m2!3d10.4788788!4d-73.2598076");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Museo+del+Acordeón/@10.4788788,-73.2619963,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9cc71d8a0c3:0x2e8ca7aa7c557f40!8m2!3d10.4788788!4d-73.2598076");
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarPilonera(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,20);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"La Pilonera Mayor");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "La Glorieta – Monumento a La Pilonera Mayor, en homenaje a Consuelo Araújonoguera, la creadora del Festival de la Leyenda Vallenata. El monumento en su reconocimiento lleva puesto el vestido típico del baile de piloneras que se realiza cada año como acto inaugural del festival.\n" +
+                "\n" +
+                "Se ubica a 1 minuto del Balneario Hurtado, por lo que puede aprovechar para bañarse en las refrescantes aguas del río Guatapurí..");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=La+Pilonera+Mayor&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiXueLpp4DqAhVwUt8KHZGTBCUQ_AUoAnoECBcQBA");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=La+Pilonera+Mayor&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiXueLpp4DqAhVwUt8KHZGTBCUQ_AUoAnoECBcQBA");
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarParqueLeyenda(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,21);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Parque de la Leyenda Vallenata");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Escenario donde se realizan los shows principales del Festival de la Leyenda Vallenata. Cada noche del Festival (3 noches) se presentan los mejores exponentes del vallenato, junto a los artistas más reconocidos de la música latina.");
+        values.put(AtilaBD.URLINFO_SITIO, "https://es.wikipedia.org/wiki/Parque_de_la_Leyenda_Vallenata");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Parque+de+La+Leyenda+Vallenata+Consuelo+Araujonoguera/@10.4968743,-73.26675,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab83b7540bedf:0x3f6957c2b897c4d8!8m2!3d10.4968743!4d-73.2645613");
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarObelisco(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,22);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Glorieta del Obelisco");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Es la escultura más alta del municipio, ya que tiene 30 metros de alto. Es un homenaje a la vida y se encuentra ubicada en la entrada sur oeste de Valledupar. Desde 1994, año en que fue inaugurada, se convirtió en un hermoso referente para propios y visitantes.");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&hs=4h1&q=obelisco+valledupar&gs_lcp=CgZwc3ktYWIQAxgAMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoECAAQRzoICAAQFhAKEB46BQghEKABOgQIABBDOgUIABCxAzoFCAAQgwE6BwgAELEDEEM6BAgAEApQwSVYrkZglUpoA3ABeAWAAcsCiAG4JpIBCDAuNC4xNS4ymAEAoAEBqgEHZ3dzLXdperABAA&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjTlYHMqYDqAhUDneAKHU1FCFQQ_AUoAnoECBYQBA");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&hs=4h1&q=obelisco+valledupar&gs_lcp=CgZwc3ktYWIQAxgAMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoECAAQRzoICAAQFhAKEB46BQghEKABOgQIABBDOgUIABCxAzoFCAAQgwE6BwgAELEDEEM6BAgAEApQwSVYrkZglUpoA3ABeAWAAcsCiAG4JpIBCDAuNC4xNS4ymAEAoAEBqgEHZ3dzLXdperABAA&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjTlYHMqYDqAhUDneAKHU1FCFQQ_AUoAnoECBYQBA");
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
 
     //----------------------------------------------------------------------------EVENTOS-------------------------------------------------------------------------------------///
 
