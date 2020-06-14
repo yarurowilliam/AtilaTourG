@@ -402,6 +402,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarSitios(){
         restaurantesSitios();
         hotelesSitios();
+        baresSitios();
     }
 
     public void restaurantesSitios(){
@@ -451,7 +452,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.CODIGO_SITIO,0);
         values.put(AtilaBD.TIPO_SITIO,"Restaurante");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
-        values.put(AtilaBD.NOMBRE_SITIO,"Bar Restaurante Compae Chipuco");
+        values.put(AtilaBD.NOMBRE_SITIO,"Compae Chipuco");
         values.put(AtilaBD.FOTO_SITIO, R.drawable.ciclomontain);
         values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
         values.put(AtilaBD.DESCRIPCION_SITIO, "Compae chipuco es un acogedor restaurante fundado en 28 de Enero 2006, al estilo de un patio típico del Valle del cacique Upar,  decorado al estilo colonial, la tradición vive en cada rincón, objeto, pintura y detalles que enriquecen nuestro bagaje cultural donde podrá apreciar la calidad y el toque especial de los sabores de Valledupar y sus alrededores.\n\n Teléfono: (5) 5805635\n\nDirección: Cra. 6 #No. 16-24");
@@ -479,7 +480,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
-    public void hotelesSitios(){guardarHotelHilton();}
+    public void hotelesSitios(){
+        guardarHotelHilton();
+        guardarHotelSonesta();
+        guardarHotelCasa();
+    }
 
     public void guardarHotelHilton(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
@@ -487,14 +492,111 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.CODIGO_SITIO,0);
         values.put(AtilaBD.TIPO_SITIO,"Hotel");
         values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
-        values.put(AtilaBD.NOMBRE_SITIO,"Hilton");
+        values.put(AtilaBD.NOMBRE_SITIO,"Hampton by Hilton Valledupar");
         values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
         values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
-        values.put(AtilaBD.DESCRIPCION_SITIO, "Este espacio es reservado para la informacion interna del restaurante");
+        values.put(AtilaBD.DESCRIPCION_SITIO, "El hotel Hampton by Hilton Valledupar está conectado a la plaza comercial Mayales, y tiene una ubicación céntrica en uno de los vecindarios más exclusivos de la ciudad, a solo cinco minutos en automóvil del Aeropuerto Alfonso López Pumarejo.\n" +
+                "\n\n" +
+                "Este hotel en Valledupar ofrece acceso fácil a varios de los principales parques empresariales, tiendas y restaurantes. Disfruta de la animada vida nocturna y de la música tradicional colombiana, el vallenato, por la cual es famosa Valledupar." +
+                "\nTeléfono: (5) 5898555\nDirección: Cl. 30 ##6 a 133");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.hiltonhotels.com/es_XM/colombia/hampton-by-hilton-valledupar/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Hampton+by+Hilton+Valledupar,+Colombia/@10.4502687,-73.2909949,13z/data=!4m11!1m2!2m1!1shilton+valledupar!3m7!1s0x8e8ab82e2fe53121:0x7ec7731db7655e17!5m2!4m1!1i2!8m2!3d10.4564296!4d-73.2425447");
+
+
 
         long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
+
+    public void guardarHotelSonesta(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Hotel");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Sonesta Hotel Valledupar");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "El Sonesta Hotel Valledupar de GHL Hoteles, ubicado al norte de la ciudad a 20 minutos del Aeropuerto Alfonso Lopez Pumarejo, contempla la magia natural de la Sierra Nevada de Santa Marta, situado dentro del complejo del centro comercial Guatapurí y frente al emblemático Parque de la Leyenda Vallenata \"Consuelo Araujo Noguera”, cuenta con las mejores instalaciones y servicios para brindar la mejor atención a sus huéspedes.\nTeléfono: (5) 5748686\nDirección: Diagonal 10 No. 6N - 15, Centro Comercial Guatapuri");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.sonestavalledupar.com/?partner=1520&gclid=EAIaIQobChMIj8-BvYXx4gIVDXGGCh2VTQvoEAAYAiAAEgIfwvD_BwE");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Sonesta+Hotel+Valledupar/@10.4959187,-73.2713782,17z/data=!3m1!4b1!4m8!3m7!1s0x8e8ab9ce002ef01b:0x25deaa32528cbbf!5m2!4m1!1i2!8m2!3d10.4959187!4d-73.2691895");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarHotelCasa(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Hotel");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Casa de Los Santos Reyes Hotel Boutique");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Casa de Los Santos Reyes Hotel Boutique en Valledupar, Una joya colonial patrimonial del siglo XVIII ubicado en el centro histórico de Valledupar, Colombia.\n" +
+                "\n" +
+                "\u200B\n" +
+                "\n" +
+                "Casa de los Santos Reyes cuenta con 8 exclusivas habitaciones y una colección de arte local en cada habitación y en zonas exteriores, nuestro hotel en Valledupar es una conexión con la historia, la riqueza cultural, la naturaleza, las tradiciones, donde se crean espacios que realzan el placer del descanso y el silencio.\n" +
+                "\n" +
+                "\u200B\nTeléfono: 313 5308269\nDirección: Centro Histórico, Cl. 13c #4A-90");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.sonestavalledupar.com/?partner=1520&gclid=EAIaIQobChMIj8-BvYXx4gIVDXGGCh2VTQvoEAAYAiAAEgIfwvD_BwE");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Hotel+Boutique+Casa+de+Los+Santos+Reyes+Valledupar/@10.4798078,-73.2476335,17z/data=!3m1!4b1!4m8!3m7!1s0x8e8ab9b30d820fdd:0x315bb6bc8ca8f51a!5m2!4m1!1i2!8m2!3d10.4798078!4d-73.2454448?hl=es");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void baresSitios(){
+        guardarWinners();
+        guardarPremiere();
+    }
+
+    public void guardarWinners(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Bares");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"Winners Sport Bar");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Vivelo Como En El Estadio. El Unico Bar Deportivo De Valledupar \nTeléfono: 313 5308269\nDirección: Calle 12 #16-20 ");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.instagram.com/winnerssport_bar/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&hs=OhK&q=winner+sport+bar+valledupar&gs_lcp=CgZwc3ktYWIQAzICCCY6BAgAEEc6BQgAEIMBOgIIADoFCAAQsQM6BwgAELEDEEM6BAgAEEM6BwgAEIMBEEM6BggAEBYQHjoICAAQFhAKEB5QsvEiWMqRI2CdkiNoAHADeACAAZsCiAH8H5IBBjAuMTIuOJgBAKABAaoBB2d3cy13aXo&uact=5&um=1&ie=UTF-8&sa=X&ved=2ahUKEwit28vVk4DqAhUjgnIEHdXkCUQQ_AUoAnoECBIQBA");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarPremiere(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,0);
+        values.put(AtilaBD.TIPO_SITIO,"Bares");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Valledupar");
+        values.put(AtilaBD.NOMBRE_SITIO,"La Premiere");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.vallecityicon);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.mountain);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Dos experiencias diferentes, un sólo lugar. \nTeléfono: 311 2093564\nDirección: Carrera 9 # 10-88");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.facebook.com/lapremierevalledupar/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/La+Premiere/@10.4809375,-73.2538753,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8ab9b540fc079f:0x56c7d21ba31a557e!8m2!3d10.4809375!4d-73.2516866");
+
+
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+
+
 
     //----------------------------------------------------------------------------EVENTOS-------------------------------------------------------------------------------------///
 
