@@ -6,17 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.atilaversionbeta.MainActivity;
 import com.example.atilaversionbeta.R;
 
 public class SeleccionarMunicipio extends AppCompatActivity {
-    private Button boton,botonBosconia;
+    private ImageButton boton,botonBosconia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccionar_municipio);
-        boton = (Button) findViewById(R.id.button);
+        boton = (ImageButton) findViewById(R.id.button);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,7 +28,7 @@ public class SeleccionarMunicipio extends AppCompatActivity {
             }
         });
 
-        botonBosconia = (Button) findViewById(R.id.buttonManaure);
+        botonBosconia = (ImageButton) findViewById(R.id.buttonManaure);
         botonBosconia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
