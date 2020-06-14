@@ -6,14 +6,89 @@
     android:layout_height="match_parent"
     android:layout_marginTop="55dp">
 
+    <TextView
+        android:text=""
+        android:id="@+id/municipioBuscado"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"/>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/imagenMunicipio"
+        android:layout_width="354dp"
+        android:layout_height="216dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background">
+
+    </ImageView>
 
     <TextView
-        android:id="@+id/municipioBuscado"
-        android:layout_width="wrap_content"
+        android:text="¡Informacion!"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textoMunicipio"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HOLA"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text=""
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        />
+
+    <TextView
+        android:text="¡Conoce mas municipios!"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/botonMunicipios"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="match_parent"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:background="#C8FDCA"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:text="¡Mas Municipios!" />
 
 </LinearLayout>

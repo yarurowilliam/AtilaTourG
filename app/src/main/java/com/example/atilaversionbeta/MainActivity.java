@@ -265,6 +265,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarParranda();
         guardarNadarRio();
         guardarCityTour();
+        //manaure
+        guardarParapente();
+        guardarAvistamiento();
     }
 
     //VALLEDUPAR
@@ -381,13 +384,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void guardarParapente(){
         SQLiteDatabase db = actividadSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
-        values.put(AtilaBD.CODIGO_ACTIVIDAD,100);
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,6);
         values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Manaure");
         values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Parapente");
-        //values.put(AtilaBD.INFO_ACTIVIDAD,"Este espacio es reservado para la informacion de la actividad");
         values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.parapente);
         values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.paramentedetll);
-        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Este espacio es reservado para la informacion interna de la actividad");
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "Admira la majestuosidad del la imponente Sierra Nevada de Santamarta desde el aire, disfruta de la belleza de nuestros atardeceres, sobrevuela un área con el espíritu mágico de la ancestral cultura Aruaca.\n" +
+                "\n" +
+                "¡Olvídate de tus miedos volando en parapente!\n" +
+                "\u200B\n" +
+                "En dónde puedo volar cerca a la costa?\n" +
+                "Voladero Manaure Aventura, A 15 minutos de Manaure y 45 min de Valledupar.\n" +
+                "\u200B\n" +
+                "¿qué incluye el paquete?\n" +
+                "1 vuelo en parapente de 20 minutos, Seguro, Transporte desde el punto de encuentro a la zona de despegue, y de regreso al punto de encuentro. \n" +
+                "\u200B\n" +
+                "¿Qué costo tiene?\n" +
+                "$150.000 pesos " +
+                "\nInformación y Reservas al: \n" +
+                "320 454 5467 \n" +
+                " WHATSAPP +57 320 45454 67 \n" +
+                "parapentecolombia@hotmail.com");
+        values.put(AtilaBD.URLINFO_ACTIVIDAD, "http://www.parapentecolombia.com/p/manaure.html");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Voladero Manaure Aventura");
+        values.put(AtilaBD.URLMAPS_ACTIVIDAD, "https://www.google.com/maps/place/VOLADERO+MANAURE+AVENTURA/@10.3930511,-73.1473326,11z/data=!4m8!1m2!2m1!1sparapente+manaure!3m4!1s0x8e8a9723d05511a1:0x59b74b490b8eceea!8m2!3d10.3769202!4d-73.0127714");
+
+        db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
+    }
+
+    public void guardarAvistamiento(){
+        SQLiteDatabase db = actividadSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,4);
+        values.put(AtilaBD.MUNICIPIO_ACTIVIDAD,"Manaure");
+        values.put(AtilaBD.NOMBRE_ACTIVIDAD,"Avistamiento de Aves");
+        values.put(AtilaBD.FOTO_ACTIVIDAD, R.drawable.aves);
+        values.put(AtilaBD.IMG_DETALLE_ACTIVIDAD, R.drawable.avesdell);
+        values.put(AtilaBD.DESCRIPCION_ACTIVIDAD, "En el Cesar puede encontrar alrededor de 500 especies de aves, con 4 focos de especial interés:\n" +
+                "\n" +
+                "Serranía del Perijá.\n" +
+                "Sierra Nevada.\n" +
+                "Ciénaga de Zapatosa.\n" +
+                "Bosque seco del Valle del Cesar\n" +
+                "Lo puede hacer en el municipio de Manaure Balcón Turístico del Cesar, en el Eco Parque Los Besotes y en la Ciénaga de Zapatosa en Chimichagua.\n" +
+                "CONTACTOS\n" +
+                "\n" +
+                "MANAURE: ROPERO AVENTURA BIRDS & TRAVELS\n" +
+                "\n" +
+                "Guía José Luis Ropero\n" +
+                "\n" +
+                "Teléfono: 317 626 8212\n" +
+                "\n" +
+                "email: turismo@roperoaventuras.com\n" +
+                "\n" +
+                "www.roperoaventuras.com");
+        values.put(AtilaBD.URLINFO_ACTIVIDAD, "https://roperoaventuras.com");
+        values.put(AtilaBD.LUGARES_ACTIVIDAD, "- Reserva Natural Los Tananeos\n- Centro Turístico Villa Adelaida\n- Finca Ecoturística La Danta\n- Finca Cafetera Las Nieves\n- Reserva Natural ProAves ");
+        values.put(AtilaBD.URLMAPS_ACTIVIDAD,"https://www.google.com/maps/place/RESERVA+ECOTURISTICA+LA+DANTA/@10.532516,-74.1277535,9z/data=!4m8!1m2!2m1!1sFinca+Ecoturística+La+Danta!3m4!1s0x8ef5053cee3a2ab7:0x5a6c1a4940ebde36!8m2!3d10.7561488!4d-74.08612");
+
+
         db.insert(AtilaBD.TABLA_ACTIVIDAD, null, values);
     }
 
@@ -407,6 +462,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarRestauranteCafe();
         guardarRestauranteCompae();
         guardarRestauranteGokela();
+        guardarBrisaManaurera();
+        guardarEstadero();
     }
 
     public void guardarRestauranteMontaCarga(){
@@ -476,11 +533,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
+    //manaure
+    public void guardarBrisaManaurera(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,23);
+        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Brasa Manaurera Restaurante");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Dirección: Cl. 2 #6-15\n" +
+                "Teléfono: 312 6686072");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Brasa+Manaurera+Restaurante&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwi8yYLAnILqAhXLg-AKHZOhBcgQ_AUoAXoECBsQAw");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Brasa+Manaurera+Restaurante&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwi8yYLAnILqAhXLg-AKHZOhBcgQ_AUoAXoECBsQAw");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarEstadero(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,24);
+        values.put(AtilaBD.TIPO_SITIO,"Restaurante");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Estadero Edubeye");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Dirección: Cra. 9 #2-95\n" +
+                "Horario: \n" +
+                "domingo\t09:00a17:00\n" +
+                "lunes : Cerrado\n" +
+                "martes : Cerrado\n" +
+                "miércoles: 09:00 a 17:00\n" +
+                "jueves: 09:00 a 17:00\n" +
+                "viernes: 09:00 a 17:00\n" +
+                "sábado: 09:00 a 17:00\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Los horarios o los servicios podrían variar.\n" +
+                "Teléfono: 310 3335380");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?q=Estadero+Edubeye&source=lmns&bih=949&biw=1879&client=opera-gx&hs=qhI&hl=es&ved=2ahUKEwie1pz3nILqAhWqTjABHZapBDIQ_AUoAXoECAEQAQ");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?q=Estadero+Edubeye&source=lmns&bih=949&biw=1879&client=opera-gx&hs=qhI&hl=es&ved=2ahUKEwie1pz3nILqAhWqTjABHZapBDIQ_AUoAXoECAEQAQ");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
 
     public void hotelesSitios(){
         guardarHotelHilton();
         guardarHotelSonesta();
         guardarHotelCasa();
+        //manaure
+        guardarHotelRecreacional();
+        guardarHotelFinca();
     }
 
     public void guardarHotelHilton(){
@@ -549,9 +658,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    //manaure
+    public void guardarHotelRecreacional(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,25);
+        values.put(AtilaBD.TIPO_SITIO,"Hotel");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Centro Recreacional Los Kioscos");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Las reservas actualmente estan canceladas motivo del COVID-19\nTeléfono: 310 3522744\n\nDirección:  Cl. 2 #1-16");
+        values.put(AtilaBD.URLINFO_SITIO, "http://www.comfacesar.com/");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Centro+Recreacional+Los+Kioscos/@10.3937348,-73.0224585,17z/data=!3m1!4b1!4m8!3m7!1s0x8e8a96e8820654d9:0x65a15f364eae0e66!5m2!4m1!1i2!8m2!3d10.3937348!4d-73.0202698");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarHotelFinca(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,26);
+        values.put(AtilaBD.TIPO_SITIO,"Hotel");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Finca Hostal La Danta");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Las reservas actualmente estan canceladas motivo del COVID-19\nTeléfono: 313 5982933\n\nDirección:  Río, Manaure, Cesar");
+        values.put(AtilaBD.URLINFO_SITIO, "https://finca-hostal-la-danta.negocio.site");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Finca+Hostal+La+Danta/@10.38792,-73.0271152,17z/data=!3m1!4b1!4m8!3m7!1s0x8e8a96e38fdce3db:0x25e515afc5f911af!5m2!4m1!1i2!8m2!3d10.38792!4d-73.0249265");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+
     public void baresSitios(){
         guardarWinners();
         guardarPremiere();
+        guardarEstancoM();
     }
 
     public void guardarWinners(){
@@ -592,8 +738,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    //manaure
+
+    public void guardarEstancoM(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,27);
+        values.put(AtilaBD.TIPO_SITIO,"Bares");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Estanco y comida El viejo sola");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Los servicios estan cancelados motivo del COVID-19\nTeléfono: No disponible\n\nDirección:  Cra. 8 #2-30");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Estanco+y+comida+El+viejo+sola/@10.3882046,-73.0311399,16.47z/data=!4m13!1m7!3m6!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!2sEstanco+y+comida+El+viejo+sola!8m2!3d10.3891125!4d-73.0293189!10e1!3m4!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!8m2!3d10.3891125!4d-73.0293189");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Estanco+y+comida+El+viejo+sola/@10.3882046,-73.0311399,16.47z/data=!4m13!1m7!3m6!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!2sEstanco+y+comida+El+viejo+sola!8m2!3d10.3891125!4d-73.0293189!10e1!3m4!1s0x8e8a971a99611833:0x87aa005c4f8cdee6!8m2!3d10.3891125!4d-73.0293189");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
     public void parquesSitios(){
         guardarParqueProvincia();
+        guardarPlazaParque();
     }
 
     public void guardarParqueProvincia(){
@@ -617,11 +783,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    //manaure
+
+    public void guardarPlazaParque(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,28);
+        values.put(AtilaBD.TIPO_SITIO,"Parques");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Plaza Simon Bolivar");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: No disponible\n\nDirección:  Cl. 2f #6104 #6-2 a");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+
     private void emergenciasSitios(){
         guardarPolicia();
         guardarBomberos();
         guardarHospitalRosario();
         guardarHospitalEduardo();
+        //manaure
+        guardarHospitalManaure();
     }
 
     public void guardarPolicia(){
@@ -689,7 +877,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
-
     public void guardarHospitalEduardo(){
         SQLiteDatabase db = sitioSave.getWritableDatabase();
         ContentValues values =  new ContentValues();
@@ -709,6 +896,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    //manaure
+
+    public void guardarHospitalManaure(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,29);
+        values.put(AtilaBD.TIPO_SITIO,"Emergencias");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Hospital Jose Antonio Socarras");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: (5) 5790313\n\nDirección:  Cra. 6 #3-1");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.hjasocarras.gov.co");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Hospital+Jose+Antonio+Socarras/@10.391981,-73.029224,17z/data=!3m1!4b1!4m5!3m4!1s0x8e8a96e519c98d1d:0xf0307ea35eaf041b!8m2!3d10.391981!4d-73.0270353");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    //
     public void monumentosSitios(){
         guardarPlaza();
         guardarRio();
@@ -719,6 +926,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarPilonera();
         guardarParqueLeyenda();
         guardarObelisco();
+        //manaure
+        guardarRioManaure();
+        guardarPlazaAtraccion();
     }
 
     public void guardarPlaza(){
@@ -894,11 +1104,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
     }
 
+    //manaure
+
+    public void guardarRioManaure(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,30);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Río Manaure");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Manaure Cesar");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps/place/Río+Manaure/@10.3881884,-73.0277368,17.29z/data=!4m5!3m4!1s0x8e8a96e3320ea217:0xcc7965bb4e1b4d75!8m2!3d10.3871407!4d-73.026805");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps/place/Río+Manaure/@10.3881884,-73.0277368,17.29z/data=!4m5!3m4!1s0x8e8a96e3320ea217:0xcc7965bb4e1b4d75!8m2!3d10.3871407!4d-73.026805");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    public void guardarPlazaAtraccion(){
+        SQLiteDatabase db = sitioSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_SITIO,28);
+        values.put(AtilaBD.TIPO_SITIO,"Atracciones");
+        values.put(AtilaBD.MUNICIPIO_SITIO,"Manaure");
+        values.put(AtilaBD.NOMBRE_SITIO,"Plaza Simon Bolivar");
+        values.put(AtilaBD.FOTO_SITIO, R.drawable.restgokela);
+        values.put(AtilaBD.IMG_DETALLE_SITIO, R.drawable.gokeladescri);
+        values.put(AtilaBD.DESCRIPCION_SITIO, "Teléfono: No disponible\n\nDirección:  Cl. 2f #6104 #6-2 a");
+        values.put(AtilaBD.URLINFO_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
+        values.put(AtilaBD.URLMAPS_SITIO, "https://www.google.com/maps?client=opera-gx&q=Plaza+Simon+Bolivar+manaure&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj6yNiwoILqAhUHU98KHXhQCzoQ_AUoAXoECBYQAw");
+
+        long ID =  db.insert(AtilaBD.TABLA_SITIO, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
     //----------------------------------------------------------------------------EVENTOS-------------------------------------------------------------------------------------///
 
     public void guardarEventos(){
         guardarFestival();
         guardarFestivalQuinta();
+        guardarFiestasPatronales();
     }
 
     public void guardarFestival(){
@@ -931,6 +1177,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         db.insert(AtilaBD.TABLA_EVENTO, null, values);
     }
 
+    public void guardarFiestasPatronales(){
+        SQLiteDatabase db = eventoSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_EVENTO,2);
+        values.put(AtilaBD.MUNICIPIO_EVENTO,"Manaure");
+        values.put(AtilaBD.NOMBRE_EVENTO,"Fiestas de la Virgen del Carmen");
+        values.put(AtilaBD.FOTO_EVENTO, R.drawable.festivaldelaquinta);
+        values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.festivalquintadescrip);
+        values.put(AtilaBD.DESCRIPCION_EVENTO, "Las fiestas de la Virgen del Carmen, patrona del municipio se celebran los días 14 al 16 de julio con una programación que incluye alboradas musicales, misa de 6, misa de 8 y misa mayor a las 10 a.m, procesión de vehículos los días 15 y 16, procesión del pueblo, quema de castillos, vaca locas, actividades culturales, deportivas y folclóricas. Manaure Es uno de los municipios más frecuentados en época de fiesta en toda la región.\n" +
+                "\n" +
+                "Los responsables de la coordinación del evento es la Congregación de la Virgen del Carmen.");
+        values.put(AtilaBD.URLINFO_EVENTO,"http://manaurebalcndelcesar.blogspot.com/2011/11/festividades.html");
+
+        db.insert(AtilaBD.TABLA_EVENTO, null, values);
+    }
+
 
     //----------------------------------------------------------------------------INFORMACION-------------------------------------------------------------------------------------///
 
@@ -941,6 +1203,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         guardarEcceHomo();
         guardarMusica();
         guardarJuglarTobias();
+        //MANAURE
+        guardarLeyendaManure();
+        guardarMusicaManaure();
     }
 
     private void guardarLeyendaVallenata() {
@@ -1043,6 +1308,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 "\n" +
                 "Como compositor, fue un enamorado de la vida, de la naturaleza, de los animales y en especial de las mujeres a las que amó con devoción.");
         values.put(AtilaBD.URLINFO_INFORMACION, "https://www.ecured.cu/Tobías_Enrique_Pumarejo_Gutiérrez");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    private void guardarLeyendaManure() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,6);
+        values.put(AtilaBD.TIPO_INFORMACION,"Leyenda");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Manaure");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"El Origen de Manaure");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallenato);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallenatodescrip);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "Hay dos versiones de por qué el municipio se llama así. La primera versión dice que se debe a que un ganadero del municipio de La Paz extravió una vaca, y al ir a buscarla la encontró en esta sabana. La ubre de la vaca estaba hinchada y de ella manaba leche. Él hizo un gesto de admiración exclamando que en estos pastizales a las vacas les mana la ubre, de esta manera nació el nombre de nuestro municipio. Manaure, que inicialmente fue bautizado como sabana donde mana la ubre, y luego por convergencia de lenguaje se unificó el término a Manaure. La segunda versión cuenta que estas tierras eran habitadas por los indios bobures o boredes descendientes de los caribes, oriundos de Venezuela, cuyo cacique se llamaba Manaure, cuando migraron hacia otros lugares, esta sabana adoptó su nombre.\n" +
+                "\n" +
+                "Para la primera década del siglo XX esta sabana empezó a ser habitada y se convirtió en corregimiento del municipio de La Paz en 1913. Fue erigido municipio en 1980..");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://theblogfilosofico.blogspot.com/2019/03/origen-mito-de-manaure-cesar-y-fundador.html");
+
+        long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
+        Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
+    }
+
+    private void guardarMusicaManaure() {
+        SQLiteDatabase db = informacionSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_INFORMACION,7);
+        values.put(AtilaBD.TIPO_INFORMACION,"Musica");
+        values.put(AtilaBD.MUNICIPIO_INFORMACION,"Manaure");
+        values.put(AtilaBD.NOMBRE_INFORMACION,"Vallenato");
+        values.put(AtilaBD.FOTO_INFORMACION, R.drawable.vallenato);
+        values.put(AtilaBD.IMG_DETALLE_INFORMACION, R.drawable.vallenatodescrip);
+        values.put(AtilaBD.DESCRIPCION_INFORMACION, "El vallenato es un género musical autóctono de la Región Caribe de Colombia con su origen en la antigua provincia de Padilla (actuales sur de La Guajira, norte del Cesar y oriente del Magdalena). Tiene notable influencia de la inmigración europea, ya que el acordeón fue traído por pobladores alemanes a Riohacha, La Guajira, a finales del siglo XIX, y tanto la organización estrófica como la métrica se valen de la tradición española; por otra parte, el componente de los esclavos afrocolombianos hace presencia con la caja vallenata, una especie de tambor que en gran medida le da el ritmo a la melodía del acordeón, y por último lo indígena se evidencia con la guacharaca.1\u200B Su popularidad se ha extendido hoy a todas las regiones de Colombia, a países vecinos como Ecuador, Panamá, Venezuela e incluso países de Europa. Se interpreta tradicionalmente con tres instrumentos: el acordeón diatónico, la guacharaca y la caja vallenata. Los ritmos o aires musicales del vallenato son el paseo, el merengue, la puya, el son y la tambora. El vallenato también se interpreta con guitarra y con la instrumentación de la cumbia en cumbiambas " +
+                "y grupos de millo.\n\nArtistas como:\n-El churo’ Díaz\n-Martín Elias\n-Mono Zabaleta\n-Silvestre Dangond\n-Kvrass\n-Diomedes Díaz\n-Jorge Oñate\n-Peter Manjarrés\n-Poncho Zuleta\n-Iván Villazón\n\nEstos son los artistas más solicitados.");
+        values.put(AtilaBD.URLINFO_INFORMACION, "https://es.wikipedia.org/wiki/Vallenato");
 
         long ID =  db.insert(AtilaBD.TABLA_INFORMACION, null, values);
         Toast.makeText(this,"AA:"+ID,Toast.LENGTH_LONG);
