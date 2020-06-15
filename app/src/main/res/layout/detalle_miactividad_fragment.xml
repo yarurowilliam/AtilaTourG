@@ -14,7 +14,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/nombreActividad"
+                android:id="@+id/nombreMiActividad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -33,7 +33,7 @@
             </TextView>
 
             <ImageView
-                android:id="@+id/imagen_detalleidA"
+                android:id="@+id/imagen_detalleidMA"
                 android:layout_width="354dp"
                 android:layout_height="216dp"
                 android:layout_gravity="center"
@@ -62,7 +62,7 @@
 
             </TextView>
             <TextView
-                android:id="@+id/descripcion_detalleA"
+                android:id="@+id/descripcion_detalleMA"
                 android:text="Informacion de la activity"
                 android:fontFamily="@font/annie_use_your_telescope"
                 android:gravity="center"
@@ -77,7 +77,7 @@
             </TextView>
 
             <Button
-                android:id="@+id/btnLink"
+                android:id="@+id/btnLinkMA"
                 style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/lugares_detallesA"
+                android:id="@+id/lugares_detallesMA"
                 android:background="@android:color/black"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
@@ -140,7 +140,7 @@
             </TextView>
 
             <Button
-                android:id="@+id/btnMaps"
+                android:id="@+id/btnMapsMi"
                 style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -148,35 +148,6 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/annie_use_your_telescope"
                 android:text="¡ABRIR UBICACION!" />
-
-
-            <TextView
-                android:text="¿Añadir a mis actividades?"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/annie_use_your_telescope"
-                android:textColor="@android:color/white"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-
-            <Button
-                android:id="@+id/btnAddMis"
-                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/annie_use_your_telescope"
-                android:text="¡AÑADIR!" />
 
 
             <TextView

@@ -29,4 +29,12 @@
                 android:title="Sitios de interes"/>
         </menu>
     </item>
+    <item android:title="MIS COSAS">
+        <menu>
+            <item
+                android:id="@+id/misActividades"
+                android:icon="@drawable/buildings"
+                android:title="Mis Actividades"/>
+        </menu>
+    </item>
 </menu>

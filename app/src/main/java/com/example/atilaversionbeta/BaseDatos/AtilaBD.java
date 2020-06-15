@@ -51,6 +51,25 @@ public class AtilaBD {
     public static String URLINFO_INFORMACION = "urlinfo";
 
 
+    //CONTRACT ACTIVIDADES
+    public static String TABLA_MIACTIVIDAD = "misactividades";
+    public static String CODIGO_MIACTIVIDAD = "codigo";
+    public static String MUNICIPIO_MIACTIVIDAD = "municipio";
+    public static String NOMBRE_MIACTIVIDAD = "nombre";
+    public static String FOTO_MIACTIVIDAD= "foto";
+    public static String IMG_DETALLE_MIACTIVIDAD = "imageDetalle";
+    public static String DESCRIPCION_MIACTIVIDAD = "descripcion";
+    public static String URLINFO_MIACTIVIDAD = "urlinfo";
+    public static String LUGARES_MIACTIVIDAD = "lugares";
+    public static String URLMAPS_MIACTIVIDAD = "urlmaps";
+
+    //CREAR TABLA ACTIVIDAD
+    public static final  String CREAR_TABLA_MIACTIVIDAD="CREATE TABLE" +
+            " " + TABLA_MIACTIVIDAD + " (" +CODIGO_MIACTIVIDAD+" "+
+            "INTEGER PRIMARY KEY,"+ MUNICIPIO_MIACTIVIDAD+" " +" TEXT," +  NOMBRE_MIACTIVIDAD+" " +" TEXT,"
+            + FOTO_MIACTIVIDAD+" " +" INTEGER,"+IMG_DETALLE_MIACTIVIDAD+" "+ "INTEGER,"+DESCRIPCION_MIACTIVIDAD+" "+ "TEXT,"+URLINFO_MIACTIVIDAD+" "+ "TEXT,"+LUGARES_MIACTIVIDAD+" "+ "TEXT,"+URLMAPS_MIACTIVIDAD+" "+ "TEXT)";
+
+
     //CREAR TABLA ACTIVIDAD
     public static final  String CREAR_TABLA_ACTIVIDAD="CREATE TABLE" +
             " " + TABLA_ACTIVIDAD + " (" +CODIGO_ACTIVIDAD+" "+

@@ -22,14 +22,18 @@ import com.example.atilaversionbeta.Datos.ConexionSQLiteHelper;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperActividad;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperEvento;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperInformacion;
+import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperMisActividades;
 import com.example.atilaversionbeta.Datos.ConexionSQLiteHelperSitio;
 import com.example.atilaversionbeta.Entidades.Actividad;
+import com.example.atilaversionbeta.Entidades.Add.MiActividad;
 import com.example.atilaversionbeta.Entidades.Evento;
 import com.example.atilaversionbeta.Entidades.Informacion;
 import com.example.atilaversionbeta.Entidades.Municipio;
 import com.example.atilaversionbeta.Entidades.Sitio;
 import com.example.atilaversionbeta.Fragments.Actividades.ActividadesFragment;
 import com.example.atilaversionbeta.Fragments.Actividades.DetalleActividadFragment;
+import com.example.atilaversionbeta.Fragments.Actividades.DetalleMiActividadFragment;
+import com.example.atilaversionbeta.Fragments.Actividades.MisActividadesFragment;
 import com.example.atilaversionbeta.Fragments.Informacion.DetalleInformacionFragment;
 import com.example.atilaversionbeta.Fragments.Informacion.InformacionFragment;
 import com.example.atilaversionbeta.Fragments.Municipio.DetalleMunicipioFragment;
@@ -62,11 +66,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DetalleSitioFragment detalleSitioFragment;
     DetalleInformacionFragment detalleInformacionFragment;
 
+    DetalleMiActividadFragment detalleMiActividadFragment;
 
     ConexionSQLiteHelperActividad actividadSave;
     ConexionSQLiteHelperEvento eventoSave;
     ConexionSQLiteHelperSitio sitioSave;
     ConexionSQLiteHelperInformacion informacionSave;
+    ConexionSQLiteHelperMisActividades misActividadesSave;
 
     int contador=0;
 
@@ -89,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getApplicationContext().deleteDatabase("actividades");
         getApplicationContext().deleteDatabase("eventos");
         getApplicationContext().deleteDatabase("informacion");
+
+        misActividadesSave = new ConexionSQLiteHelperMisActividades(this,"misactividades",null,1);
+        pruebita();
 
         actividadSave = new ConexionSQLiteHelperActividad(this,"actividades",null,1);
         guardarActividades();
@@ -149,6 +158,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_fragment,new SitiosFragment());
+            fragmentTransaction.commit();
+        }
+        if(menuItem.getItemId() == R.id.misActividades){
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_fragment,new MisActividadesFragment());
             fragmentTransaction.commit();
         }
         return false;
@@ -256,7 +271,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    @Override
+    public void enviarMiActivadad(MiActividad miActividad) {
+
+        detalleMiActividadFragment = new DetalleMiActividadFragment();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto", miActividad);
+        detalleMiActividadFragment.setArguments(bundleEnvio);
+
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container_fragment, detalleMiActividadFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
+
     //----------------------------------------------------------------------------ACTIVIDADES-----------------------------------------------------------------------------------///
+
+    public void pruebita(){
+        prueba();
+        prueba_1();
+    }
+    public void prueba_1(){
+        SQLiteDatabase db = misActividadesSave.getWritableDatabase();
+        db.delete(AtilaBD.TABLA_MIACTIVIDAD, AtilaBD.CODIGO_MIACTIVIDAD+"=999",null);
+        db.close();
+    }
+
+    public void prueba(){
+        SQLiteDatabase db = misActividadesSave.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put(AtilaBD.CODIGO_ACTIVIDAD,999);
+        db.insert(AtilaBD.TABLA_MIACTIVIDAD, null, values);
+    }
 
     public void guardarActividades(){
         guardarCiclomonta();
