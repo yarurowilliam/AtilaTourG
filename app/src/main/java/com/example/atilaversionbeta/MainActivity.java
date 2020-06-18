@@ -1206,6 +1206,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         values.put(AtilaBD.IMG_DETALLE_EVENTO, R.drawable.festivalvallenatodescrip);
         values.put(AtilaBD.DESCRIPCION_EVENTO, "El Festival de la Leyenda Vallenata, llamado también Festival Vallenato, es el evento más importante del vallenato. Se celebra anualmente a finales de abril o principios de mayo desde 1968 en Valledupar, y es organizado por la Fundación Festival de la Leyenda Vallenata, la cual vela por la defensa y difusión de la expresiones folclóricas y populares que rodean la música vallenata. El festival busca preservar cuatro de los cinco aires o ritmos del vallenato: paseo, merengue, son y puya. Además, el género de la piqueria, la parranda, la poesía campesina, cuentos, leyendas, mitos, tradición oral, expresiones literarias, socioculturales y artísticas asociadas al vallenato.");
         values.put(AtilaBD.URLINFO_EVENTO,"https://festivalvallenato.com");
+        values.put(AtilaBD.DIA_EVENTO,"26");
+        values.put(AtilaBD.MES_EVENTO,"03");
+        values.put(AtilaBD.ANO_EVENTO,2021);
 
         db.insert(AtilaBD.TABLA_EVENTO, null, values);
     }
@@ -1222,6 +1225,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 "\n" +
                 "En Valledupar siempre hemos impulsado y sobresalido en el ámbito cultural y creativo, a tal punto de ser una de las ciudades que mas ha explotado este potencial innato.");
         values.put(AtilaBD.URLINFO_EVENTO,"https://www.festivaldelaquinta.com");
+        values.put(AtilaBD.DIA_EVENTO,17);
+        values.put(AtilaBD.MES_EVENTO,7);
+        values.put(AtilaBD.ANO_EVENTO,2020);
 
         db.insert(AtilaBD.TABLA_EVENTO, null, values);
     }
@@ -1238,6 +1244,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 "\n" +
                 "Los responsables de la coordinación del evento es la Congregación de la Virgen del Carmen.");
         values.put(AtilaBD.URLINFO_EVENTO,"http://manaurebalcndelcesar.blogspot.com/2011/11/festividades.html");
+        values.put(AtilaBD.DIA_EVENTO,16);
+        values.put(AtilaBD.MES_EVENTO,7);
+        values.put(AtilaBD.ANO_EVENTO,2020);
 
         db.insert(AtilaBD.TABLA_EVENTO, null, values);
     }

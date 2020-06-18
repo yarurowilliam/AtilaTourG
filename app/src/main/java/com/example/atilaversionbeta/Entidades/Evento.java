@@ -10,10 +10,15 @@ public class Evento implements Serializable {
     private int imagenDetalle;
     private String descripcion;
     private String linkInfo;
+    private int dia;
+    private int mes;
+    private int ano;
+
+
 
     public Evento(){}
 
-    public Evento(int codigo, String municipio, String nombre, int foto, int imagenDetalle, String descripcion, String linkInfo) {
+    public Evento(int codigo, String municipio, String nombre, int foto, int imagenDetalle, String descripcion, String linkInfo, int dia, int mes, int ano) {
         this.codigo = codigo;
         this.municipio = municipio;
         this.nombre = nombre;
@@ -21,6 +26,9 @@ public class Evento implements Serializable {
         this.imagenDetalle = imagenDetalle;
         this.descripcion = descripcion;
         this.linkInfo = linkInfo;
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = ano;
     }
 
     public int getCodigo() {
@@ -77,5 +85,29 @@ public class Evento implements Serializable {
 
     public void setLinkInfo(String linkInfo) {
         this.linkInfo = linkInfo;
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 }

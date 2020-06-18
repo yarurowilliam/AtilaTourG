@@ -24,6 +24,10 @@ public class AtilaBD {
     public static String IMG_DETALLE_EVENTO = "imageDetalle";
     public static String DESCRIPCION_EVENTO = "descripcion";
     public static String URLINFO_EVENTO= "urlinfo";
+    public static String DIA_EVENTO="dia";
+    public static String MES_EVENTO="mes";
+    public static String ANO_EVENTO="ano";
+
 
 
     //CONTRACT SITIOS
@@ -80,7 +84,7 @@ public class AtilaBD {
     public static final  String CREAR_TABLA_EVENTO="CREATE TABLE" +
             " " + TABLA_EVENTO + " (" +CODIGO_EVENTO+" "+
             "INTEGER,"+ MUNICIPIO_EVENTO+" " +" TEXT," +  NOMBRE_EVENTO+" " +" TEXT,"
-            + FOTO_EVENTO+" " +" INTEGER,"+IMG_DETALLE_EVENTO+" "+ "INTEGER,"+DESCRIPCION_EVENTO+" "+ "TEXT,"+URLINFO_EVENTO+" "+ "TEXT)";
+            + FOTO_EVENTO+" " +" INTEGER,"+IMG_DETALLE_EVENTO+" "+ "INTEGER,"+DESCRIPCION_EVENTO+" "+ "TEXT,"+URLINFO_EVENTO+" "+ "TEXT,"+DIA_EVENTO+" "+ "INTEGER,"+MES_EVENTO+" "+ "INTEGER,"+ANO_EVENTO+" "+ "INTEGER)";
 
     //CREAR TABLA SITIO
     public static final  String CREAR_TABLA_SITIO="CREATE TABLE" +

@@ -65,6 +65,9 @@ public class EventosFragment extends Fragment {
             evento.setImagenDetalle(cursor.getInt(4));
             evento.setDescripcion(cursor.getString(5));
             evento.setLinkInfo(cursor.getString(6));
+            evento.setDia(cursor.getInt(7));
+            evento.setMes(cursor.getInt(8));
+            evento.setAno(cursor.getInt(9));
             listaEventos.add(evento);
         }
         recyclerEvento.setLayoutManager(new LinearLayoutManager(getContext()));

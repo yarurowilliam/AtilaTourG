@@ -83,6 +83,35 @@
                 android:fontFamily="@font/annie_use_your_telescope"
                 android:text="¡MAS INFORMACIÓN!" />
 
+
+            <TextView
+                android:text="¿Añadir al calendario?"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/annie_use_your_telescope"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/btnAddCalendario"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/annie_use_your_telescope"
+                android:text="¡AÑADIR!" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
